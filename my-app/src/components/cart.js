@@ -1,9 +1,11 @@
+import "./../styles/Cart.css"
+
 function Cart(){
     const monsteraPrice = 8
     const lierrePrice   = 10
     const bouquetPrice  = 15
     return(
-        <div className="Cart">
+        <div className="mml-cart">
             <h2>Panier</h2>
             <ul>
                 <li>Monstera: {monsteraPrice} $</li>    
