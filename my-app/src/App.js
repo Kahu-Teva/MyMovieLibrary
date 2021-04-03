@@ -1,8 +1,8 @@
-import Banner from './components/banner.js'
+import Header from './components/header.js'
 import './App.css';
 
 function App() {
-  return <Banner/>
+  return <Header/>
 }
 
 export default App;
