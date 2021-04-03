@@ -3,11 +3,10 @@ import Description from "./description.js"
 
 function Banner() {
     return (
-        // eslint-disable-next-line react/jsx-no-undef
-        <React.Fragment>
+        <div className="mml-banner">
             <Header/>
             <Description/>
-        </React.Fragment>   
+        </div>
     )
 }
 
