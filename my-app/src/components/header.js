@@ -1,4 +1,3 @@
-import ALaUne from "./aLaUne.js"
 import "./../styles/Header.css"
 import logo from "./../assets/logo.png"
 
@@ -16,7 +15,6 @@ function Header(){
                     textSize: 10
                 }}> Accueil</p>
             </div>
-            <ALaUne/>
         </div>
     )
 }

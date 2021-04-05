@@ -1,7 +1,6 @@
 
 import Banner from "./banner.js"
 import Row from "./row.js"
-// import MovieList from './movieList.js';
 import './../styles/App.css';
 
 function App() {
