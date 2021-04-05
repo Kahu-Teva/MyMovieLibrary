@@ -6,6 +6,7 @@ import Row    from "./row.js"
 import Navbar    from "./navbar.js"
 
 function App() {
+  const express = require('express');
   return(
     <div className="app">
 
