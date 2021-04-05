@@ -1,22 +1,22 @@
 export const movieList = [
     {
         nom : "Charlie et la chocolatrie",
-        categorie: "Fantastique",
+        category: "Fantastique",
         id: "1ed" 
     },
     {
         nom : "La Reine des Neige 4",
-        categorie: "Dessin Anime",
+        category: "Dessin Anime",
         id: "2ac" 
     },
     {
         nom : "Fast and Furious 7",
-        categorie: "Action",
+        category: "Action",
         id: "3sd" 
     },
     {
         nom : "Terminator: La renaissance",
-        categorie: "Action",
+        category: "Action",
         id: "4gf" 
     }
 ]

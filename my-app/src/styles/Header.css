@@ -1,11 +1,12 @@
-.mml-title{
-    color:black;
-    text-align: right;
-    padding: 32px;
-    border-bottom: solid 3px black;
+.Header{
+    position: relative;
+    background-color: rgb(31, 31, 31);
+}
+.nav-bar{
+    position: relative;
 }
 
 .mml-logo{
-    height: 45px;
-    width: 45px;
+    width: 100px;
+    height: 22px;
 }

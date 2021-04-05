@@ -1,0 +1,15 @@
+.mml-alaune{
+    position: relative;
+    width: 100%;
+    max-height: 320px;
+    background-color: #31b572;
+
+}
+
+.mml-alaune__content{
+    position: relative;
+    top: 0;
+    left: 4%;
+    min-width: 350px;
+    width: 36%;
+}

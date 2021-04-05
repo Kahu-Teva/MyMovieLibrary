@@ -1,23 +1,22 @@
-import Cart from "./cart.js"
+import ALaUne from "./aLaUne.js"
 import "./../styles/Header.css"
 import logo from "./../assets/logo.png"
 
 function Header(){
-    const title = "My Movie Library."
     return (
-
-        // ######################inline style
-        // <div style={{
-        //     color: 'black',
-        //     textAlign: 'right',
-        //     padding: 32,
-        //     borderBottonm '3px solid black'
-        // }}
-        //#######################className for style it
         <div className="Header">
-            <img src={logo} alt="My Movie Library" className="mml-logo" />
-            <div className="mml-title">{title.toUpperCase()}</div>
-            <Cart/>
+            <div className="nav-bar">
+                <a href=".">
+                    <img src={logo} alt="My Movie Library" className="mml-logo" />
+                </a>
+                <p style={{ 
+                    display: "inline-block",
+                    color: "white",
+                    padding: 3,
+                    textSize: 10
+                }}> Accueil</p>
+            </div>
+            <ALaUne/>
         </div>
     )
 }
