@@ -1,18 +1,16 @@
 
-import Banner from "./banner.js"
-import Row from "./row.js"
 import './../styles/App.css';
+
+import Banner from "./banner.js"
+import Row    from "./row.js"
+import Navbar    from "./navbar.js"
 
 function App() {
   return(
     <div className="app">
-
-      {/* * Nav bar * */}
+      
+      <Navbar />
       <Banner/>
-      
-      
-      
-      {/* <MovieList/> */}
       <Row title="Les plus gros succès sur MML"/>
       <Row title="Tendance actuelles"/>
       <Row title="Série palpitantes"/>
