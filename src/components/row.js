@@ -1,6 +1,4 @@
-//import {movieList} from './../datas/movieList.js'
 import { React, useState, useEffect } from "react";
-import bgRow from "./../assets/filmtest.jpg"
 import "./../styles/Row.css"
 
 function Row({title}){
@@ -40,14 +38,14 @@ function Row({title}){
             <h2 className="row__title">{title}</h2>
             <div className="row__posters">
                 {
-                movies.map(movie => (
-                    <img
-                        key={movie._id}
-                        className="row__poster"
-                        src={movie.posterLink}
-                        alt={movie.title}
-                    />
-                ))
+                    movies.map(movie => (
+                        <img
+                            key={movie._id}
+                            className="row__poster"
+                            src={movie.posterLink}
+                            alt={movie.title}
+                        />
+                    ))
                 }
             </div>
         </div>
