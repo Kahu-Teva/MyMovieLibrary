@@ -8,14 +8,14 @@ import Navbar    from "./navbar.js"
 function App() {
   return(
     <div className="app">
-      
       <Navbar />
       <Banner/>
       <Row title="Les plus gros succès sur MML"/>
-      <Row title="Tendance actuelles"/>
+      
+      {/* <Row title="Tendance actuelles"/>
       <Row title="Série palpitantes"/>
       <Row title="Documentaire"/>
-      <Row title="Série d'actions"/>
+      <Row title="Série d'actions"/> */}
 
     </div>
   )
