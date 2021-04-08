@@ -42,7 +42,7 @@ function Row({title}){
 
     console.log("Fetching movies OK !");
     
-    function handlePoster(currentMovie){
+    function handleShowMovie(currentMovie){
         setDetail(currentMovie);
         setIsLoadedDetail(true);
     }
@@ -52,6 +52,7 @@ function Row({title}){
     }else if(!isLoaded) {
         return <div>Chargement...</div>;
     }else if(showDetail){
+        console.log("HAAAAAAAAAAAAAAAAAAA ",movies);
         return (
             <div>
                 <div className="row">
@@ -64,7 +65,7 @@ function Row({title}){
                                 className="row__poster"
                                 src={currentMovie.posterLink}
                                 alt={currentMovie.title}
-                                onClick={(props) => handlePoster(currentMovie)}
+                                onClick={() => handleShowMovie(currentMovie)}
                                 />
                                 ))
                             }
@@ -86,7 +87,7 @@ function Row({title}){
                         className="row__poster"
                         src={currentMovie.posterLink}
                         alt={currentMovie.title}
-                        onClick={() => handlePoster(currentMovie)}
+                        onClick={() => handleShowMovie(currentMovie)}
                         />
                     ))
                 }

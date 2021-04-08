@@ -10,7 +10,7 @@
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_.jpg",
 			"trailerLink" : "https://www.youtube.com/watch?v=EcZIzpvRTlU",
 			"directors" : [ "1" ],
-			"writers" : [ ],
+			"writers" : [ "1" ],
 			"actors" : [ { "id" : 1, "role" : "Hogan" }, { "id" : 2, "role" : "Tony Stark" } ],
 			"rate" : "8.7"
 		},
@@ -23,9 +23,9 @@
 			"duration" : 180,
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BMjA3ODU4MDUyMl5BMl5BanBnXkFtZTgwNTE2OTkzMTE@._V1_.jpg",
 			"trailerLink" : "https://www.youtube.com/watch?v=HbB1LC_QyK0",
-			"directors" : [ "1" ],
-			"writers" : [ ],
-			"actors" : [ ],
+			"directors" : [ "8" ],
+			"writers" : [ "8" ],
+			"actors" : [ "9"],
 			"rate" : "9.2"
 		},
 		{
@@ -37,9 +37,9 @@
 			"duration" : 180,
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BOTdlZGJiNDUtODUyMi00ODQyLTgwNDEtNmI5MzZlZmZlOWQ5XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
 			"trailerLink" : "https://www.youtube.com/watch?v=Quf4qIkD3KY",
-			"directors" : [ "1" ],
-			"writers" : [ ],
-			"actors" : [ ],
+			"directors" : [ "10" ],
+			"writers" : [ "10" ],
+			"actors" : [ "11" ],
 			"rate" : "7.6"
 		},
 		{
@@ -52,7 +52,7 @@
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
 			"trailerLink" : "https://youtu.be/Yce10h0cfCE",
 			"directors" : [ "3" ],
-			"writers" : [ ],
+			"writers" : [ "12" ],
 			"actors" : [ { "id" : 4, "role" : "Nathan Lid" }],
 			"rate" : "8.3"
 		},
@@ -66,8 +66,8 @@
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BMjM1OTMxNzUyM15BMl5BanBnXkFtZTgwNjYzMTIzOTE@._V1_.jpg",
 			"trailerLink" : "https://youtu.be/CmRih_VtVAs",
 			"directors" : [ "5" ],
-			"writers" : [ ],
-			"actors" : [ ],
+			"writers" : [ "5" ],
+			"actors" : [ "13" ],
 			"rate" : "8.5"
 		},
 		{
@@ -91,7 +91,7 @@
 			"lastname" : "FAVREAU",
 			"firstname" : "Jon",
 			"biography" : "Initially an indie film favorite, actor Jon Favreau has progressed to strong mainstream visibility into the millennium and, after nearly two decades in the business, is still enjoying character stardom as well as earning notice as a writer/producer/director.",
-			"birthDate" : "19870813",
+			"birthDate" : "19870913",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BNjcwNzg4MjktNDNlMC00M2U1LWJmMjgtZTVkMmI4MDI2MTVmXkEyXkFqcGdeQXVyMjI4MDI0NTM@._V1_.jpg"
 		},
@@ -118,7 +118,7 @@
 			"lastname" : "Skarsgård",
 			"firstname" : "Alexander",
 			"biography" : "Alexander Johan Hjalmar Skarsgård was born in Stockholm, Sweden and is the eldest son of famed actor Stellan Skarsgård. Among his siblings are actors Gustaf Skarsgård, Bill Skarsgård, and Valter Skarsgård. For most of his formative years, his father was an acclaimed actor in Europe but had not yet achieved the international fame that came after his star turn in Breaking the Waves (1996). ",
-			"birthDate" : "19760725",
+			"birthDate" : "19760825",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTY1MjQxNjEzOF5BMl5BanBnXkFtZTgwMTU5ODM2ODE@._V1_.jpg"
 		},
@@ -148,7 +148,71 @@
 			"birthDate" : "19810609",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTUxNTQwNDQ1MV5BMl5BanBnXkFtZTcwOTI2MDUwNg@@._V1_.jpg"
+		},
+		{
+			"_id" : "8",
+			"lastname" : "Gunn",
+			"firstname" : "James",
+			"biography" : "James Gunn was born and raised in St. Louis, Missouri, to Leota and James Francis Gunn. He is from a large Catholic family, with Irish and Czech ancestry. His father and his uncles were all lawyers. He has been writing and performing as long as he can remember.",
+			"birthDate" : "19660805",
+			"deathDate" : "",
+			"picture" : "https://m.media-amazon.com/images/M/MV5BMTYxMDgzMjA5OV5BMl5BanBnXkFtZTcwMzMwMTUxNw@@._V1_.jpg"
+		},
+		{
+			"_id" : "9",
+			"lastname" : "Diesel",
+			"firstname" : "Vin",
+			"biography" : "Vin Diesel was born Mark Sinclair in Alameda County, California, along with his fraternal twin brother, Paul Vincent. He was raised by his astrologer/psychologist mother, Delora Sherleen (Sinclair), and adoptive father, Irving H. Vincent, an acting instructor and theatre manager, in an artists' housing project in New York City's Greenwich Village",
+			"birthDate" : "19660805",
+			"deathDate" : "",
+			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
+		},
+		{
+			"_id" : "10",
+			"lastname" : "Cameron",
+			"firstname" : "James",
+			"biography" : "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, Canada. He moved to the United States in 1971. The son of an engineer, he majored in physics at California State University before switching to English, and eventually dropping out. He then drove a truck to support his screenwriting ambition.",
+			"birthDate" : "19500816",
+			"deathDate" : "",
+			"picture" : "https://m.media-amazon.com/images/M/MV5BMjI0MjMzOTg2MF5BMl5BanBnXkFtZTcwMTM3NjQxMw@@._V1_.jpg"
+		},
+		{
+			"_id" : "11",
+			"lastname" : "DiCaprio",
+			"firstname" : "Leonardo",
+			"biography" : "Few actors in the world have had a career quite as diverse as Leonardo DiCaprio's. DiCaprio has gone from relatively humble beginnings, as a supporting cast member of the sitcom Growing Pains (1985) and low budget horror movies, such as Critters 3 (1991), to a major teenage heartthrob in the 1990s, as the hunky lead actor in movies such as Romeo",
+			"birthDate" : "19741111",
+			"deathDate" : "",
+			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
+		},
+		{
+			"_id" : "12",
+			"lastname" : "Rossio",
+			"firstname" : "Terry",
+			"biography" : "Terry Rossio was born on July 2, 1960 in Kalamazoo, Michigan, USA. He is a writer, known for Godzilla VS. Kong (2021), Pirates of the Caribbean: The Curse of the Black Pearl (2003), Aladdin (1992), and Shrek (2001). Additional credits for Rossio include Deja Vu, G-Force, Lovestruck, The Long Ranger and Pirates of The Caribbean: Dead Men ",
+			"birthDate" : "19600702",
+			"deathDate" : "",
+			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
+		},
+		{
+			"_id" : "13",
+			"lastname" : "Will",
+			"firstname" : "Smith",
+			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. He has enjoyed success in television, film, and music. In April 2007, Newsweek called him 'the most powerful actor in Hollywood'. Smith has been nominated for five Golden Globe Awards, two Academy Awards, and has won four Grammy Awards.",
+			"birthDate" : "19691025",
+			"deathDate" : "",
+			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
+		},
+		{
+			"_id" : "14",
+			"lastname" : "Wachowski",
+			"firstname" : "Lilly",
+			"biography" : "Director, writer, and producer Lilly Wachowski was born in 1967 in Chicago, the daughter of Lynne, a nurse and painter, and Ron, a businessman. Lilly was educated at Kellogg Elementary School in Chicago, before moving on to Whitney M. Young High School. After graduating from high school, she attended Emerson College in Boston but dropped out.",
+			"birthDate" : "19671229",
+			"deathDate" : "",
+			"picture" : "https://m.media-amazon.com/images/M/MV5BMTU1Mjc1MjkzNV5BMl5BanBnXkFtZTgwOTc1NDQ1ODE@._V1_.jpg"
 		}
+		
 		 
 	]
 }
