@@ -90,7 +90,7 @@
 			"_id" : "1",
 			"lastname" : "FAVREAU",
 			"firstname" : "Jon",
-			"biography" : "Initially an indie film favorite, actor Jon Favreau has progressed to strong mainstream visibility into the millennium and, after nearly two decades in the business, is still enjoying character stardom as well as earning notice as a writer/producer/director.",
+			"biography" : "Initially an indie film favorite, actor Jon Favreau has progressed to strong mainstream visibility into the millennium. ",
 			"birthDate" : "19870913",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BNjcwNzg4MjktNDNlMC00M2U1LWJmMjgtZTVkMmI4MDI2MTVmXkEyXkFqcGdeQXVyMjI4MDI0NTM@._V1_.jpg"
@@ -99,7 +99,7 @@
 			"_id" : "2",
 			"lastname" : "Downey Jr.",
 			"firstname" : "Robert",
-			"biography" : "Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name, he has managed to stay new and fresh even after over four decades in the business.",
+			"biography" : "Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name.",
 			"birthDate" : "19650404",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
@@ -108,7 +108,7 @@
 			"_id" : "3",
 			"lastname" : "Wingard",
 			"firstname" : "Adam",
-			"biography" : "RAt 19 Adam got his start in feature film making early with his directorial debut Home Sick, a slasher horror film starring Bill Moseley and Tom Toweles. However it was his second effort at 24 years old with the film Pop Skull that garnered him a talent to watch. ",
+			"biography" : "RAt 19 Adam got his start in feature film making early with his directorial debut Home Sick, a slasher horror film starring Bill Moseley and Tom Toweles.",
 			"birthDate" : "1982123",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTQxNDc2OTM1OF5BMl5BanBnXkFtZTcwNTUzODg1OA@@._V1_.jpg"
@@ -189,7 +189,7 @@
 			"_id" : "12",
 			"lastname" : "Rossio",
 			"firstname" : "Terry",
-			"biography" : "Terry Rossio was born on July 2, 1960 in Kalamazoo, Michigan, USA. He is a writer, known for Godzilla VS. Kong (2021), Pirates of the Caribbean: The Curse of the Black Pearl (2003), Aladdin (1992), and Shrek (2001). Additional credits for Rossio include Deja Vu, G-Force, Lovestruck, The Long Ranger and Pirates of The Caribbean: Dead Men ",
+			"biography" : "Terry Rossio was born on July 2, 1960 in Kalamazoo, Michigan, USA. He is a writer, known for Godzilla VS. Kong (2021), Pirates of the Caribbean: The Curse of the Black Pearl (2003), Aladdin (1992), and Shrek (2001).",
 			"birthDate" : "19600702",
 			"deathDate" : "",
 			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
@@ -198,7 +198,7 @@
 			"_id" : "13",
 			"lastname" : "Will",
 			"firstname" : "Smith",
-			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. He has enjoyed success in television, film, and music. In April 2007, Newsweek called him 'the most powerful actor in Hollywood'. Smith has been nominated for five Golden Globe Awards, two Academy Awards, and has won four Grammy Awards.",
+			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. He has enjoyed success in television, film, and music. In April 2007, Newsweek called him 'the most powerful actor in Hollywood'.",
 			"birthDate" : "19691025",
 			"deathDate" : "",
 			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
@@ -207,7 +207,7 @@
 			"_id" : "14",
 			"lastname" : "Wachowski",
 			"firstname" : "Lilly",
-			"biography" : "Director, writer, and producer Lilly Wachowski was born in 1967 in Chicago, the daughter of Lynne, a nurse and painter, and Ron, a businessman. Lilly was educated at Kellogg Elementary School in Chicago, before moving on to Whitney M. Young High School. After graduating from high school, she attended Emerson College in Boston but dropped out.",
+			"biography" : "Director, writer, and producer Lilly Wachowski was born in 1967 in Chicago, the daughter of Lynne, a nurse and painter, and Ron, a businessman.",
 			"birthDate" : "19671229",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTU1Mjc1MjkzNV5BMl5BanBnXkFtZTgwOTc1NDQ1ODE@._V1_.jpg"
