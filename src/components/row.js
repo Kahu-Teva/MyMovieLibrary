@@ -7,8 +7,8 @@ function Row({title}){
     // let query = new URLSearchParams(useLocation().search);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [showDetail, setIsLoadedDetail] = useState(false);
     const [movies, setItems] = useState([]);
-    const [isDetailLoad, setIsLoadedDetail] = useState(false);
     const [detail, setDetail] = useState([]);
 
     // Fetching data
@@ -51,7 +51,7 @@ function Row({title}){
         return <div>Erreur : {error.message}</div>;
     }else if(!isLoaded) {
         return <div>Chargement...</div>;
-    }else if(isDetailLoad){
+    }else if(showDetail){
         return (
             <div>
                 <div className="row">

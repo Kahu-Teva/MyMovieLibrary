@@ -15,6 +15,7 @@
     font-size: 3rem;
     font-weight: 800;
     padding-bottom: 0.3rem;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .banner__description{
@@ -23,6 +24,7 @@
     font-size:0.8rem;
     max-width: 360px;
     height: 80px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .banner__buttons{
@@ -43,7 +45,8 @@
     font-size: 0.8rem;
     font-weight: 800;
     text-shadow: none;
-    transition:transform 0.450ms ;
+    box-shadow: 10px 10px 18px -1px rgba(0,0,0,0.75);
+    transition:transform 0.450ms;
 }
 
 .button_play{
@@ -56,10 +59,16 @@
     color: rgb(255, 255, 255);
 }
 
-.banner__button:hover{
+.button_play:hover{
     background-color: rgb(255, 255, 255);
     color: rgba(0, 0, 0);
-    transition: all 0.2s;
+    transition: all 0.3s;
+}
+
+.button_more_info:hover{
+    background-color: rgba(104, 104, 104, 0.952);
+    color: rgb(255, 255, 255);
+    transition: all 0.3s;
 }
 
 .banner__button_ico{

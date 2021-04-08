@@ -1,0 +1,31 @@
+.row__title{
+    padding-left: 4%;
+}
+
+.row__posters{
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.row__posters::-webkit-scrollbar{
+    display: none;
+}
+
+.row__poster{
+    object-fit: contain;
+    height: 130px;
+    max-height: 230px;
+    margin:0 2% 0 0;
+    padding: 10px 0;
+    transition: transform 480ms;
+}
+
+.row__poster:first-child{
+    margin-left: 2%;
+}
+
+.row__poster:hover{
+    transform:scale(1.08);
+}

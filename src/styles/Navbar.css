@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     transition: all 0.2s;
+    background-image: linear-gradient(0deg,transparent,rgb(31, 31, 31));
 }
 
 .navbar__black{
@@ -16,7 +17,7 @@
 
 .navbar__logo{
     position: fixed;
-    left: 20px;
+    margin-left: 20px;
     width: 180px;
     object-fit: contain;
     cursor: pointer;
@@ -28,3 +29,35 @@
     width: 30px;
     object-fit: contain;
 }
+
+.nav__button{
+    position: fixed;
+    color: white;
+    background-color: #ff2222a2;
+    border: none;
+    padding: 4px;
+    margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.nav__button:hover{
+    background-color: #ff2222e0;
+}
+
+.b1{
+    margin-left: 220px;
+    width: 90px;
+}
+
+.b2{
+    margin-left: 330px;
+    width: 90px;
+}
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import logo_mml    from "./../assets/logo.png";
 import logo_avatar from "./../assets/avatar1.png";
 import "./../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar(){
     const[show, handleShow] = useState(false);
@@ -17,17 +18,20 @@ function Navbar(){
         return () => {
             window.removeEventListener("scroll");
         };
+
+
     }, []);
 
     return(
         <div className={`navbar ${show && "navbar__black"}`}>
-            <a href=".">
+            <Link to="/Home">
                 <img src={logo_mml} alt="My Movie Library Logo" className="navbar__logo" />
-            </a>
-
-            <a href=".">
+            </Link>
+            <Link to="/Home" className="nav__button b1">Accueil</Link>
+            <Link to="/actors" className="nav__button b2">Actors</Link>
+            <Link to="/profil">
                 <img src={logo_avatar} alt="My Avatar" className="navbar__avatar" />
-            </a>
+            </Link>
         </div>
     )
 }
