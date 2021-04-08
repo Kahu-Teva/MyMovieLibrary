@@ -59,7 +59,7 @@
 		{
 			"_id" : "5",
 			"title" : "Suicide Squad",
-			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong",
+			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history - the fearsome Godzilla and the mighty Kong",
 			"releaseDate" : "2016",
 			"genre" : [ "action", "adventure" , "fanstasy" ],
 			"duration" : 265,
@@ -73,7 +73,7 @@
 		{
 			"_id" : "6",
 			"title" : "V for Vendetta",
-			"synopsis" : "In a future British tyranny, a shadowy freedom fighter, known only by the alias of 'V', plots to overthrow it with the help of a young woman.",
+			"synopsis" : "In a future British tyranny, a shadowy freedom fighter, known only by the alias of 'V'.",
 			"releaseDate" : "2005",
 			"genre" : [ "action", "drama" , "sf" ],
 			"duration" : 265,
@@ -212,7 +212,5 @@
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTU1Mjc1MjkzNV5BMl5BanBnXkFtZTgwOTc1NDQ1ODE@._V1_.jpg"
 		}
-		
-		 
 	]
 }
