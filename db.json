@@ -52,14 +52,14 @@
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
 			"trailerLink" : "https://youtu.be/Yce10h0cfCE",
 			"directors" : [ "3" ],
-			"writers" : [ "12" ],
+			"writers" : [ "3" ],
 			"actors" : [ { "id" : 4, "role" : "Nathan Lid" }],
 			"rate" : "8.3"
 		},
 		{
 			"_id" : "5",
 			"title" : "Suicide Squad",
-			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history - the fearsome Godzilla and the mighty Kong",
+			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong",
 			"releaseDate" : "2016",
 			"genre" : [ "action", "adventure" , "fanstasy" ],
 			"duration" : 265,
@@ -67,20 +67,20 @@
 			"trailerLink" : "https://youtu.be/CmRih_VtVAs",
 			"directors" : [ "5" ],
 			"writers" : [ "5" ],
-			"actors" : [ "13" ],
+			"actors" : [ "5" ],
 			"rate" : "8.5"
 		},
 		{
 			"_id" : "6",
 			"title" : "V for Vendetta",
-			"synopsis" : "In a future British tyranny, a shadowy freedom fighter, known only by the alias of 'V'.",
+			"synopsis" : "In a future British tyranny, a shadowy freedom fighter, known only by the alias of 'V', plots to overthrow it with the help of a young woman.",
 			"releaseDate" : "2005",
 			"genre" : [ "action", "drama" , "sf" ],
 			"duration" : 265,
 			"posterLink" : "https://m.media-amazon.com/images/M/MV5BOTI5ODc3NzExNV5BMl5BanBnXkFtZTcwNzYxNzQzMw@@._V1_.jpg",
 			"trailerLink" : "https://www.youtube.com/watch?v=hmbQgEHGpLg",
 			"directors" : [ "7" ],
-			"writers" : [ ],
+			"writers" : [ "7" ],
 			"actors" : [ { "id" : 6, "role" : "Evey" }],
 			"rate" : "9.2"
 		}
@@ -184,33 +184,6 @@
 			"birthDate" : "19741111",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
-		},
-		{
-			"_id" : "12",
-			"lastname" : "Rossio",
-			"firstname" : "Terry",
-			"biography" : "Terry Rossio was born on July 2, 1960 in Kalamazoo, Michigan, USA. He is a writer, known for Godzilla VS. Kong (2021), Pirates of the Caribbean: The Curse of the Black Pearl (2003), Aladdin (1992), and Shrek (2001).",
-			"birthDate" : "19600702",
-			"deathDate" : "",
-			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
-		},
-		{
-			"_id" : "13",
-			"lastname" : "Will",
-			"firstname" : "Smith",
-			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. ",
-			"birthDate" : "19691025",
-			"deathDate" : "",
-			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
-		},
-		{
-			"_id" : "14",
-			"lastname" : "Wachowski",
-			"firstname" : "Lilly",
-			"biography" : "Director, writer, and producer Lilly Wachowski was born in 1967 in Chicago, the daughter of Lynne, a nurse and painter, and Ron, a businessman.",
-			"birthDate" : "19671229",
-			"deathDate" : "",
-			"picture" : "https://m.media-amazon.com/images/M/MV5BMTU1Mjc1MjkzNV5BMl5BanBnXkFtZTgwOTc1NDQ1ODE@._V1_.jpg"
 		}
 	]
 }
