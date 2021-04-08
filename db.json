@@ -45,7 +45,7 @@
 		{
 			"_id" : "4",
 			"title" : "Godzilla vs. Kong",
-			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong - with humanity caught in the balance.",
+			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome .",
 			"releaseDate" : "2021",
 			"genre" : [ "action", "sf" , "thriller" ],
 			"duration" : 113,
@@ -59,7 +59,7 @@
 		{
 			"_id" : "5",
 			"title" : "Suicide Squad",
-			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong - with humanity caught in the balance.",
+			"synopsis" : "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong",
 			"releaseDate" : "2016",
 			"genre" : [ "action", "adventure" , "fanstasy" ],
 			"duration" : 265,
@@ -117,7 +117,7 @@
 			"_id" : "4",
 			"lastname" : "Skarsgård",
 			"firstname" : "Alexander",
-			"biography" : "Alexander Johan Hjalmar Skarsgård was born in Stockholm, Sweden and is the eldest son of famed actor Stellan Skarsgård. Among his siblings are actors Gustaf Skarsgård, Bill Skarsgård, and Valter Skarsgård. For most of his formative years, his father was an acclaimed actor in Europe but had not yet achieved the international fame.",
+			"biography" : "Alexander Johan Hjalmar Skarsgård was born in Stockholm, Sweden and is the eldest son of famed actor Stellan Skarsgård. Among his siblings are actors Gustaf Skarsgård, Bill Skarsgård, and Valter Skarsgård. For most of his formative years, his father was an acclaimed actor in Europe.",
 			"birthDate" : "19760825",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTY1MjQxNjEzOF5BMl5BanBnXkFtZTgwMTU5ODM2ODE@._V1_.jpg"
@@ -135,7 +135,7 @@
 			"_id" : "6",
 			"lastname" : "Portman",
 			"firstname" : "Natalie",
-			"biography" : "Natalie Portman is the first person born in the 1980s to have won the Academy Award for Best Actress (for Black Swan (2010)).Natalie was born Natalie Hershlag on June 9, 1981, in Jerusalem, Israel. She is the only child of Avner Hershlag, a Israeli-born doctor, and Shelley Stevens, an American-born artist (from Cincinnati, Ohio).",
+			"biography" : "Natalie Portman is the first person born in the 1980s to have won the Academy Award for Best Actress (for Black Swan (2010)).Natalie was born Natalie Hershlag on June 9, 1981, in Jerusalem, Israel. She is the only child of Avner Hershlag, .",
 			"birthDate" : "19810609",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTQ3ODE3Mjg1NV5BMl5BanBnXkFtZTcwNzA4ODcxNA@@._V1_.jpg"
@@ -162,7 +162,7 @@
 			"_id" : "9",
 			"lastname" : "Diesel",
 			"firstname" : "Vin",
-			"biography" : "Vin Diesel was born Mark Sinclair in Alameda County, California, along with his fraternal twin brother, Paul Vincent. He was raised by his astrologer/psychologist mother, Delora Sherleen (Sinclair), and adoptive father, Irving H. Vincent, an acting instructor and theatre manager, in an artists'",
+			"biography" : "Vin Diesel was born Mark Sinclair in Alameda County, California, along with his fraternal twin brother, Paul Vincent. He was raised by his astrologer/psychologist mother, Delora Sherleen (Sinclair), and adoptive father, Irving H. Vincent.",
 			"birthDate" : "19660805",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
@@ -171,7 +171,7 @@
 			"_id" : "10",
 			"lastname" : "Cameron",
 			"firstname" : "James",
-			"biography" : "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, Canada. He moved to the United States in 1971. The son of an engineer, he majored in physics at California State University before switching to English, and eventually dropping out. He then drove a truck to support his screenwriting ambition.",
+			"biography" : "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, Canada. He moved to the United States in 1971. The son of an engineer, he majored in physics at California State University before switching to English, and eventually dropping out.",
 			"birthDate" : "19500816",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMjI0MjMzOTg2MF5BMl5BanBnXkFtZTcwMTM3NjQxMw@@._V1_.jpg"
@@ -180,7 +180,7 @@
 			"_id" : "11",
 			"lastname" : "DiCaprio",
 			"firstname" : "Leonardo",
-			"biography" : "Few actors in the world have had a career quite as diverse as Leonardo DiCaprio's. DiCaprio has gone from relatively humble beginnings, as a supporting cast member of the sitcom Growing Pains (1985) and low budget horror movies, such as Critters 3 (1991), to a major teenage heartthrob in the 1990s, as the hunky lead actor in movies such as Romeo",
+			"biography" : "Few actors in the world have had a career quite as diverse as Leonardo DiCaprio's. DiCaprio has gone from relatively humble beginnings, as a supporting cast member of the sitcom Growing Pains (1985) and low budget horror movies, such as Critters 3 (1991).",
 			"birthDate" : "19741111",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
