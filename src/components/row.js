@@ -47,24 +47,23 @@ function Row({title}){
             <div className="row">
                 <h2 className="row__title">{title}</h2>
                 <div className="row__posters">
-                    {
-                        movies.map(currentMovie => (
-                            <img
-                            key={currentMovie._id}
-                            className="row__poster"
-                            src={currentMovie.posterLink}
-                            alt={currentMovie.title}
-                            onClick={() => handlePoster(currentMovie)}
-                            />
-                            ))
-                        }
+                {
+                    movies.map(currentMovie => (
+                        <img
+                        key={currentMovie._id}
+                        className="row__poster"
+                        src={currentMovie.posterLink}
+                        alt={currentMovie.title}
+                        onClick={() => handlePoster(currentMovie)}
+                        />
+                    ))
+                }
                 </div>
             </div>
         );
     }else{
         return (
-            <div>
-
+            <React.Fragment>
                 <div className="row">
                     <h2 className="row__title">{title}</h2>
                     <div className="row__posters">
@@ -82,7 +81,7 @@ function Row({title}){
                     </div>
                 </div>
                 <RowDetail info={detail}/>
-            </div>
+            </React.Fragment>
         );
     }
 }
