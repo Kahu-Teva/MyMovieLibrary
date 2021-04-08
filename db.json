@@ -117,7 +117,7 @@
 			"_id" : "4",
 			"lastname" : "Skarsgård",
 			"firstname" : "Alexander",
-			"biography" : "Alexander Johan Hjalmar Skarsgård was born in Stockholm, Sweden and is the eldest son of famed actor Stellan Skarsgård. Among his siblings are actors Gustaf Skarsgård, Bill Skarsgård, and Valter Skarsgård. For most of his formative years, his father was an acclaimed actor in Europe but had not yet achieved the international fame that came after his star turn in Breaking the Waves (1996). ",
+			"biography" : "Alexander Johan Hjalmar Skarsgård was born in Stockholm, Sweden and is the eldest son of famed actor Stellan Skarsgård. Among his siblings are actors Gustaf Skarsgård, Bill Skarsgård, and Valter Skarsgård. For most of his formative years, his father was an acclaimed actor in Europe but had not yet achieved the international fame.",
 			"birthDate" : "19760825",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTY1MjQxNjEzOF5BMl5BanBnXkFtZTgwMTU5ODM2ODE@._V1_.jpg"
@@ -135,7 +135,7 @@
 			"_id" : "6",
 			"lastname" : "Portman",
 			"firstname" : "Natalie",
-			"biography" : "Natalie Portman is the first person born in the 1980s to have won the Academy Award for Best Actress (for Black Swan (2010)).Natalie was born Natalie Hershlag on June 9, 1981, in Jerusalem, Israel. She is the only child of Avner Hershlag, a Israeli-born doctor, and Shelley Stevens, an American-born artist (from Cincinnati, Ohio), who also acts as Natalie's agent. Her parents are both of Ashkenazi Jewish descent. Natalie's family left Israel for Washington, D.C., when she was still very young. After a few more moves, her family finally settled in New York, where she still lives to this day. She graduated with honors, and her academic achievements allowed her to attend Harvard University. She was discovered by an agent in a pizza parlor at the age of 11. She was pushed towards a career in modeling but she decided that she would rather pursue a career in acting. She was featured in many live performances, but she made her powerful film debut in the movie Léon (1994) (aka 'Léon'). Following this role Natalie won roles in such films as Heat (1995), Beautiful Girls (1996), and Mars Attacks! (1996).",
+			"biography" : "Natalie Portman is the first person born in the 1980s to have won the Academy Award for Best Actress (for Black Swan (2010)).Natalie was born Natalie Hershlag on June 9, 1981, in Jerusalem, Israel. She is the only child of Avner Hershlag, a Israeli-born doctor, and Shelley Stevens, an American-born artist (from Cincinnati, Ohio).",
 			"birthDate" : "19810609",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMTQ3ODE3Mjg1NV5BMl5BanBnXkFtZTcwNzA4ODcxNA@@._V1_.jpg"
@@ -162,7 +162,7 @@
 			"_id" : "9",
 			"lastname" : "Diesel",
 			"firstname" : "Vin",
-			"biography" : "Vin Diesel was born Mark Sinclair in Alameda County, California, along with his fraternal twin brother, Paul Vincent. He was raised by his astrologer/psychologist mother, Delora Sherleen (Sinclair), and adoptive father, Irving H. Vincent, an acting instructor and theatre manager, in an artists' housing project in New York City's Greenwich Village",
+			"biography" : "Vin Diesel was born Mark Sinclair in Alameda County, California, along with his fraternal twin brother, Paul Vincent. He was raised by his astrologer/psychologist mother, Delora Sherleen (Sinclair), and adoptive father, Irving H. Vincent, an acting instructor and theatre manager, in an artists'",
 			"birthDate" : "19660805",
 			"deathDate" : "",
 			"picture" : "https://m.media-amazon.com/images/M/MV5BMjExNzA4MDYxN15BMl5BanBnXkFtZTcwOTI1MDAxOQ@@._V1_.jpg"
@@ -198,7 +198,7 @@
 			"_id" : "13",
 			"lastname" : "Will",
 			"firstname" : "Smith",
-			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. He has enjoyed success in television, film, and music. In April 2007, Newsweek called him 'the most powerful actor in Hollywood'.",
+			"biography" : "Willard Carroll 'Will' Smith, Jr. (born September 25, 1968) is an American actor, comedian, producer, rapper, and songwriter. ",
 			"birthDate" : "19691025",
 			"deathDate" : "",
 			"picture" : "https://static.hollywoodreporter.com/sites/default/files/2018/11/terry_rossio-928x523.jpg"
