@@ -14,12 +14,7 @@ function Navbar(){
             }else{
                 handleShow(false);
             }
-        });
-        return () => {
-            window.removeEventListener("scroll");
-        };
-
-
+        })
     }, []);
 
     return(
