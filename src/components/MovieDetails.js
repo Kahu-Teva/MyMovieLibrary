@@ -65,7 +65,7 @@ export default function MovieDetails() {
                     {movie.directors.map(directorID =>
                         (
                             peoples.map(people =>(
-                                people._id==directorID?(<li key={"director"+people._id}> {people.firstname} {people.lastname} </li>):null
+                                (people._id===directorID)?(<li key={"director"+people._id}> {people.firstname} {people.lastname} </li>):null
                             ))
                         )
                     )}
@@ -77,7 +77,7 @@ export default function MovieDetails() {
                     {movie.writers.map(writerID =>
                         (
                             peoples.map(people =>(
-                                people._id==writerID?(<li key={"writer"+people._id}> {people.firstname} {people.lastname} </li>):null
+                                (people._id===writerID)?(<li key={"writer"+people._id}> {people.firstname} {people.lastname} </li>):null
                             ))
                         )
                     )}
@@ -89,7 +89,7 @@ export default function MovieDetails() {
                     {movie.actors.map(actor =>
                         (
                             peoples.map(people =>(
-                                people._id==actor.id?(<li key={"actor"+people._id}> {people.firstname} {people.lastname} </li>):null
+                                (people._id===actor.id)?(<li key={"actor"+people._id}> {people.firstname} {people.lastname} </li>):null
                             ))
                         )
                     )}
