@@ -25,7 +25,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=HbB1LC_QyK0",
 			"directors" : [ "8" ],
 			"writers" : [ "8" ],
-			"actors" : [ "9"],
+			"actors" : [ { "id" : 9, "role" : "UNK" } ],
 			"rate" : "9.2"
 		},
 		{
@@ -39,7 +39,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=Quf4qIkD3KY",
 			"directors" : [ "10" ],
 			"writers" : [ "10" ],
-			"actors" : [ "11" ],
+			"actors" : [ { "id" : 11, "role" : "Jack Dawson" },{ "id" : 4, "role" : "UNK" } ],
 			"rate" : "7.6"
 		},
 		{
@@ -67,7 +67,7 @@
 			"trailerLink" : "https://youtu.be/CmRih_VtVAs",
 			"directors" : [ "5" ],
 			"writers" : [ "5" ],
-			"actors" : [ "5" ],
+			"actors" : [ { "id" : 5, "role" : "UNK" }],
 			"rate" : "8.5"
 		},
 		{

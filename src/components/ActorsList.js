@@ -1,54 +1,61 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import "./../styles/ActorList.css"
 
 function ActorsList() {
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [resp, setData] = useState({ movies: null, peoples: null });
+  const [isLoaded2, setIsLoaded2] = useState(false);
+  const [peoples, setPeoples] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   // Fetching data
   useEffect(() => {
-    console.log(`"Fetching people from ${process.env.REACT_APP_SERVER_API}...`);
-    const fetchData = async () => {
-      const respMovies = await axios(
-        `${process.env.REACT_APP_SERVER_API}/movies`
-      );
-      const respPeoples = await axios(
-        `${process.env.REACT_APP_SERVER_API}/peoples`
-      );
+    fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        setMovies(result);
+        setIsLoaded(true);
+      },
+      (error) => {
+        setIsLoaded(true);
+        setError(error);
+      }
+    )
 
-      setData({ movies: respMovies.data, peoples: respPeoples.data });
-    };
-    fetchData()
-  .then(setIsLoaded(true));
-  }, [])
-  let actorsMovies = [];
+    fetch(`${process.env.REACT_APP_SERVER_API}/peoples`)
+    .then(res2 => res2.json())
+    .then(
+      (result2) => {
+        setPeoples(result2);
+        setIsLoaded2(true);
+      },
+      (error) => {
+        setError(error);
+        setIsLoaded2(true);
+      }
+    )
+  }, []);
+  
   return (
     <div className="actorsList">
       <h2 className="actors__title">Liste des acteurs</h2>
       <div className="actors">
-        { !isLoaded ? ( <div>Chargement...</div> ) : ( 
-          console.log("render"),          
-          /* resp.movies.map(movie => (
-            movie.actors.length > 0 ? null : (
-            actorsMovies.push(movie.actors))
-          )), */
-          console.log("sososo: ", resp.movies.actors),
-          console.log("sososo: ", resp.peoples)
-
-
+        { (!isLoaded && !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
-          /*
-          noDoublonsActors = Array.from(new Set(peopleIds))
-          noDoublonsActors.map(id => (
-            <div id={id} className="actor">
-              <Link to={`/actorDetails?id=${id}`}>
-                <span>Actor :: {id}</span>
-              </Link>
-            </div>
-          )) */
+          movies.map(movie => (
+            movie.actors.map(actor=>(
+              peoples.map(people => (
+                (actor.id == people._id )? 
+                (<span> 
+                  {people._id} :: 
+                  {people.firstname} {people.lastname}.
+                </span>) : null
+              ))  
+            ))
+          ))
         )}
       </div>
     </div>
