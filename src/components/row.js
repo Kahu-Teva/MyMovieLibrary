@@ -60,13 +60,15 @@ function Row({title}){
                     <div className="row__posters">
                         {
                             movies.map(currentMovie => (
+                                <div className="row__poster">
                                 <img
                                 key={currentMovie._id}
-                                className="row__poster"
+                                className="row__poster__img"
                                 src={currentMovie.posterLink}
                                 alt={currentMovie.title}
                                 onClick={() => handleShowMovie(currentMovie)}
                                 />
+                                </div>
                                 ))
                             }
                     </div>
