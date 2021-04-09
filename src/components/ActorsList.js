@@ -2,6 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 import { useState, useEffect } from 'react';
 import "./../styles/ActorList.css"
+import { Link } from "react-router-dom";
 
 function ActorsList() {
   const [error, setError] = useState(null);
@@ -38,6 +39,9 @@ function ActorsList() {
       }
     )
   }, []);
+
+  let actorsListDB = [];
+  let actorsList = [];
   
   return (
     <div className="actorsList">
@@ -49,12 +53,19 @@ function ActorsList() {
             movie.actors.map(actor=>(
               peoples.map(people => (
                 (actor.id == people._id )? 
-                (<span> 
-                  {people._id} :: 
-                  {people.firstname} {people.lastname}.
-                </span>) : null
+                actorsListDB.push(people) : null
               ))  
             ))
+          )),
+          actorsList = Array.from(new Set(actorsListDB)),
+          actorsList.map(actor => (
+            <div className="actor__card">
+              <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
+
+              <img className="actor__picture" src={actor.picture}/>
+              <span className="actor__name">{actor.firstname} {actor.lastname}</span>
+              </Link>
+            </div>
           ))
         )}
       </div>
