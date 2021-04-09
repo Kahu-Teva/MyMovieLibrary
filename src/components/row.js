@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 // import { useLocation, Link  } from "react-router-dom";
 import RowDetail from "./rowDetail.js";
 import "./../styles/Row.css"
@@ -54,24 +54,20 @@ function Row({title}){
     }else if(showDetail){
         console.log("HAAAAAAAAAAAAAAAAAAA ",movies);
         return (
-            <div>
-                <div className="row">
-                    <h2 className="row__title">{title}</h2>
-                    <div className="row__posters">
-                        {
-                            movies.map(currentMovie => (
-                                <div className="row__poster">
-                                <img
-                                key={currentMovie._id}
-                                className="row__poster__img"
-                                src={currentMovie.posterLink}
-                                alt={currentMovie.title}
-                                onClick={() => handleShowMovie(currentMovie)}
-                                />
-                                </div>
-                                ))
-                            }
-                    </div>
+            <div className="row">
+                <h2 className="row__title">{title}</h2>
+                <div className="row__posters">
+                {
+                    movies.map(currentMovie => (
+                        <img
+                        key={currentMovie._id}
+                        className="row__poster"
+                        src={currentMovie.posterLink}
+                        alt={currentMovie.title}
+                        onClick={() => handleShowMovie(currentMovie)}
+                        />
+                    ))
+                }
                 </div>
                 <RowDetail info={detail}/>
             </div>

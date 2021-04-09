@@ -1,9 +1,9 @@
 .row{
-    margin-left: 30px;
+    margin:0;
 }
 
 .row__title{
-    margin:0;
+    margin:10px 0 0 10px;
 }
 
 .row__posters{

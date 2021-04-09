@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, Link} from "react-router-dom";
 //import './ActorDetails.css';
 
-function ActorDetails(props) {
+function ActorDetails() {
   let query = new URLSearchParams(useLocation().search);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,7 +16,7 @@ function ActorDetails(props) {
     console.log(`Actor ID : ${actorId}`);
     console.log(`Fetching actor details from ${process.env.REACT_APP_SERVER_API}...`);
 
-    fetch(`https://my-json-server.typicode.com/fchapman97/MyMovieLibrary/peoples?_id=${actorId}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${actorId}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -39,17 +39,19 @@ function ActorDetails(props) {
     return <div>Erreur : {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Chargement...</div>;
-  } else {
-    
+  } else {    
     return (
-      <React.Fragment>
+      <div>
+        <Link to="/actors" >
+          <div className="">back</div>
+        </Link>
         <h3>Détail de l'acteur</h3>
         <div>
           <p>ID : {actor._id}</p>
           <p>Nom : {actor.lastname}</p>
           <p>Prénom : {actor.firstname}</p>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

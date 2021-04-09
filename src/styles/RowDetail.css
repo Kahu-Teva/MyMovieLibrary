@@ -1,6 +1,15 @@
 .row__detail{
-    padding-left: 4%;
-    width:96%;
+    padding:0;
+    width:100%;
+}
+
+.row__detail_title{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
 }
 
 .ytPlayer{

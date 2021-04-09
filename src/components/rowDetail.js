@@ -6,8 +6,8 @@ function RowDetail({info}){
     const trailerLink = info.trailerLink + "/embed/";
     const id = getYouTubeID(trailerLink);
     const opts = {
-        height: "390",
-        width: "96%",
+        height: "420",
+        width: "100%",
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1
@@ -15,7 +15,7 @@ function RowDetail({info}){
     }
     return(
         <div className="row__detail">
-            <div className="title">{info.title}</div>
+            <div className="row__detail_title">{info.title}</div>
             <YouTube videoId={id} opts={opts} className="yt__window"/>
         </div>
     );

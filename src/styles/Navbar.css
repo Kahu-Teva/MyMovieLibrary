@@ -40,7 +40,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 0.9rem;
     font-weight: 700;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -61,3 +61,12 @@
     width: 90px;
 }
 
+.b3{
+    margin-left: 440px;
+    width: 90px;
+}
+
+.b4{
+    margin-left: 550px;
+    width: 90px;
+}
