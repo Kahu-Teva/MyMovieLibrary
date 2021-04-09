@@ -61,9 +61,8 @@ function ActorsList() {
           actorsList.map(actor => (
             <div className="actor__card">
               <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
-
-              <img className="actor__picture" src={actor.picture} alt={actor.picture}/>
-              <span className="actor__name">{actor.firstname} {actor.lastname}</span>
+                <img className="actor__picture" src={actor.picture} alt={actor.picture}/>
+                <span className="actor__name">{actor.firstname} {actor.lastname}</span>
               </Link>
             </div>
           ))

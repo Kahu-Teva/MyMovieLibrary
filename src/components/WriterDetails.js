@@ -6,15 +6,15 @@ function ActorDetails() {
   let query = new URLSearchParams(useLocation().search);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [actor, setActor] = useState([]);
+  const [writer, setWriter] = useState([]);
 
   // Fetching data
   useEffect(() => {
     let actorId = query.get("id");
 
-    console.log('Query : ', query);
-    console.log(`Actor ID : ${actorId}`);
-    console.log(`Fetching actor details from ${process.env.REACT_APP_SERVER_API}...`);
+    // console.log('Query : ', query);
+    // console.log(`Actor ID : ${actorId}`);
+    // console.log(`Fetching actor details from ${process.env.REACT_APP_SERVER_API}...`);
 
     fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${actorId}`)
       .then(res => res.json())
@@ -22,8 +22,8 @@ function ActorDetails() {
         (result) => {
           console.log("Result : ", result);
           setIsLoaded(true);
-          setActor(result[0]);
-          console.log("Actor : ", actor);
+          setWriter(result[0]);
+          // console.log("Writer : ", writer);
         },
         // Remarque : il faut gérer les erreurs ici plutôt que dans
         // un bloc catch() afin que nous n’avalions pas les exceptions
@@ -42,14 +42,14 @@ function ActorDetails() {
   } else {    
     return (
       <div>
-        <Link to="/actors" >
+        <Link to="/writers" >
           <div className="">back</div>
         </Link>
-        <h3>Détail de l'acteur</h3>
+        <h3>Détail de lu scénariste.</h3>
         <div>
-          <p>ID : {actor._id}</p>
-          <p>Nom : {actor.lastname}</p>
-          <p>Prénom : {actor.firstname}</p>
+          <p>ID : {writer._id}</p>
+          <p>Nom : {writer.lastname}</p>
+          <p>Prénom : {writer.firstname}</p>
         </div>
       </div>
     );
