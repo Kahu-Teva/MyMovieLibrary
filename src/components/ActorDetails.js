@@ -56,7 +56,7 @@ function ActorDetails() {
           <p>Prénom : {actor.firstname}</p>
 
           <p>Date de naissance : {truncate(birtdate,4,6)}/{truncate(birtdate,6,8)}/{truncate(birtdate,0,4)}</p>
-          {actor.deathDay == ""? (
+          {(actor.deathDay === "")? (
             <p>Date de décès : {truncate(actor.deathDay,7,8)}/{truncate(actor.deathDay,5,6)}/{truncate(actor.deathDay,1,4)}</p>
           ) : null}
           <p>Biographie: {actor.biography}</p>

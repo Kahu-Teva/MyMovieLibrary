@@ -11,7 +11,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=EcZIzpvRTlU",
 			"directors" : [ "1" ],
 			"writers" : [ "1" ],
-			"actors" : [ { "id" : 1, "role" : "Hogan" }, { "id" : 2, "role" : "Tony Stark" } ],
+			"actors" : [ { "_id" : "1", "role" : "Hogan" }, { "_id" : "2", "role" : "Tony Stark" } ],
 			"rate" : "8.7"
 		},
 		{
@@ -25,7 +25,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=HbB1LC_QyK0",
 			"directors" : [ "8" ],
 			"writers" : [ "8" ],
-			"actors" : [ { "id" : 9, "role" : "UNK" } ],
+			"actors" : [ { "_id" : "9", "role" : "UNK" } ],
 			"rate" : "9.2"
 		},
 		{
@@ -39,7 +39,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=Quf4qIkD3KY",
 			"directors" : [ "10" ],
 			"writers" : [ "10" ],
-			"actors" : [ { "id" : 11, "role" : "Jack Dawson" },{ "id" : 4, "role" : "UNK" } ],
+			"actors" : [ { "_id" : "11", "role" : "Jack Dawson" },{ "_id" : "4", "role" : "UNK" } ],
 			"rate" : "7.6"
 		},
 		{
@@ -53,7 +53,7 @@
 			"trailerLink" : "https://youtu.be/Yce10h0cfCE",
 			"directors" : [ "3" ],
 			"writers" : [ "3" ],
-			"actors" : [ { "id" : 4, "role" : "Nathan Lid" }],
+			"actors" : [ { "_id" : "4", "role" : "Nathan Lid" }],
 			"rate" : "8.3"
 		},
 		{
@@ -67,7 +67,7 @@
 			"trailerLink" : "https://youtu.be/CmRih_VtVAs",
 			"directors" : [ "5" ],
 			"writers" : [ "5" ],
-			"actors" : [ { "id" : 5, "role" : "UNK" }],
+			"actors" : [ { "_id" : "5", "role" : "UNK" }],
 			"rate" : "8.5"
 		},
 		{
@@ -81,7 +81,7 @@
 			"trailerLink" : "https://www.youtube.com/watch?v=hmbQgEHGpLg",
 			"directors" : [ "7" ],
 			"writers" : [ "7" ],
-			"actors" : [ { "id" : 6, "role" : "Evey" }],
+			"actors" : [ { "_id" : "6", "role" : "Evey" }],
 			"rate" : "9.2"
 		}
 	],

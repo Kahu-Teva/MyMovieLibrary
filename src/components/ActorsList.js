@@ -52,7 +52,7 @@ function ActorsList() {
           movies.map(movie => (
             movie.actors.map(actor=>(
               peoples.map(people => (
-                (actor.id == people._id )? 
+                (actor.id === people._id )? 
                 actorsListDB.push(people) : null
               ))  
             ))

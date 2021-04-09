@@ -51,7 +51,7 @@ export default function WriterList(){
           movies.map(movie => (
             movie.writers.map(writer=>(
               peoples.map(people => (
-                (writer == people._id )? 
+                (writer === people._id )? 
                 writerListDB.push(people) : null
               ))  
             ))
