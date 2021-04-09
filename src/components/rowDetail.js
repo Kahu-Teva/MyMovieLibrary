@@ -1,5 +1,6 @@
 import "./../styles/RowDetail.css"
 import YouTube from "react-youtube";
+import MovieDetails from "./MovieDetails";
 var getYouTubeID = require("get-youtube-id");
 
 function RowDetail({info}){
@@ -17,6 +18,7 @@ function RowDetail({info}){
         <div className="row__detail">
             <div className="row__detail_title">{info.title}</div>
             <YouTube videoId={id} opts={opts} className="yt__window"/>
+            <MovieDetails/>
         </div>
     );
 }

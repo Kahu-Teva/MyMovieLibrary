@@ -47,7 +47,7 @@ function ActorsList() {
     <div className="actorsList">
       <h2 className="actors__title">Liste des acteurs</h2>
       <div className="actors">
-        { (!isLoaded && !isLoaded2) ? ( <div>Chargement...</div> ) : (
+        { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
           movies.map(movie => (
             movie.actors.map(actor=>(
@@ -59,7 +59,7 @@ function ActorsList() {
           )),
           actorsList = Array.from(new Set(actorsListDB)),
           actorsList.map(actor => (
-            <div className="actor__card">
+            <div key={actor._id} className="actor__card">
               <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
                 <img className="actor__picture" src={actor.picture} alt={actor.picture}/>
                 <span className="actor__name">{actor.firstname} {actor.lastname}</span>

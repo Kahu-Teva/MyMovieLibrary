@@ -46,7 +46,7 @@ export default function WriterList(){
     <div className="actorsList">
       <h2 className="actors__title">Liste des Scénaristes</h2>
       <div className="actors">
-        { (!isLoaded && !isLoaded2) ? ( <div>Chargement...</div> ) : (
+        { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
           movies.map(movie => (
             movie.writers.map(writer=>(
@@ -58,9 +58,8 @@ export default function WriterList(){
           )),
           writersList = Array.from(new Set(writerListDB)),
           writersList.map(writer => (
-            <div className="actor__card">
-              <Link key={writer._id} to={`/actorDetails?id=${writer._id}`}>
-
+            <div key={writer._id} className="actor__card">
+              <Link to={`/writerDetails?id=${writer._id}`}>
               <img className="actor__picture" src={writer.picture} alt={writer.firstname + " " + writer.lastname} />
               <span className="actor__name">{writer.firstname} {writer.lastname}</span>
               </Link>

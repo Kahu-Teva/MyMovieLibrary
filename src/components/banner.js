@@ -6,7 +6,7 @@ function truncate(str, n){
     return str?.length > n ? str.substr(0, n - 1) + "..." :str;
 }
 
-function Banner() {
+export default function Banner() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -58,14 +58,14 @@ function Banner() {
                             {truncate(description,150)}
                         </p>
                         <div className="banner__buttons">                    
-                            <button className="banner__button button_play">
-                                <div className="banner__button_ico"/>
-                                <span>Lecture</span>
-                            </button>
-                            <button className="banner__button button_more_info">
-                                <div className="banner__button_ico"/>
-                                <span>Plus d'infos</span>
-                            </button>                
+                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_play">
+                            <div className="banner__button_ico"/>
+                            <span>Lecture</span>
+                        </Link>  
+                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_more_info">
+                            <div className="banner__button_ico"/>
+                            <span>Plus d'infos</span>
+                        </Link>                
                         </div>
                     </div>
                     <div className="banner__fadeBottom"></div>
@@ -76,6 +76,7 @@ function Banner() {
     }
     else{
         getRandomMovie(movies);
+        setIsLoaded(false);
         return (
             <header>
                 <div className="banner"
@@ -92,15 +93,14 @@ function Banner() {
                             {truncate(description,150)}
                         </p>
                         <div className="banner__buttons">                    
-                            <button className="banner__button button_play">
+                            <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_play">
                                 <div className="banner__button_ico"/>
                                 <span>Lecture</span>
-                            </button>
-                            <button className="banner__button button_more_info">
-                                <Link key={idMovie} to={`/writerDetails?id=${idMovie}`}></Link>
+                            </Link>  
+                            <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_more_info">
                                 <div className="banner__button_ico"/>
                                 <span>Plus d'infos</span>
-                            </button>                
+                            </Link>        
                         </div>
                     </div>
                     <div className="banner__fadeBottom"></div>
@@ -110,5 +110,3 @@ function Banner() {
         )
     }
 }
-
-export default Banner
