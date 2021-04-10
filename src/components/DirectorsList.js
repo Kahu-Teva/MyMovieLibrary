@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import "./../styles/ActorList.css"
 import { Link } from "react-router-dom";
 
-export default function WriterList(){
+export default function DirectorList(){
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoaded2, setIsLoaded2] = useState(false);
@@ -39,29 +39,29 @@ export default function WriterList(){
     )
   }, []);
 
-  let writerListDB = [];
-  let writersList = [];
+  let directorsListDB = [];
+  let directorsList = [];
   
   return (
     <div className="actorsList">
-      <h2 className="actors__title">Liste des scénaristes</h2>
+      <h2 className="actors__title">Liste des producteurs</h2>
       <div className="actors">
         { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
           movies.map(movie => (
-            movie.writers.map(writer=>(
+            movie.directors.map(director=>(
               peoples.map(people => (
-                (writer === people._id )? 
-                writerListDB.push(people) : null
+                (director === people._id )? 
+                directorsListDB.push(people) : null
               ))  
             ))
           )),
-          writersList = Array.from(new Set(writerListDB)),
-          writersList.map(writer => (
-            <div key={writer._id} className="actor__card">
-              <Link to={`/writerDetails?id=${writer._id}`}>
-              <img className="actor__picture" src={writer.picture} alt={writer.firstname + " " + writer.lastname} />
-              <span className="actor__name">{writer.firstname} {writer.lastname}</span>
+          directorsList = Array.from(new Set(directorsListDB)),
+          directorsList.map(director => (
+            <div key={director._id} className="actor__card">
+              <Link key={director._id} to={`/directorDetails?id=${director._id}`}>
+                <img className="actor__picture" src={director.picture} alt={director.picture}/>
+                <span className="actor__name">{director.firstname} {director.lastname}</span>
               </Link>
             </div>
           ))

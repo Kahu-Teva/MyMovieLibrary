@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react';
 import { useLocation, Link} from "react-router-dom";
-//import './ActorDetails.css';
 
 function truncate(str, startTo, stopTo){
   return str?.slice(startTo, stopTo);
@@ -21,11 +20,7 @@ function ActorDetails() {
         (result) => {
           setIsLoaded(true);
           setWriter(result[0]);
-        },
-        // Remarque : il faut gérer les erreurs ici plutôt que dans
-        // un bloc catch() afin que nous n’avalions pas les exceptions
-        // dues à de véritables bugs dans les composants.
-        (error) => {
+        },(error) => {
           setIsLoaded(true);
           setError(error);
         }

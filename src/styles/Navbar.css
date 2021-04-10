@@ -1,42 +1,39 @@
 .navbar{
+    display: flex;
+    flex-direction: row;
     position: fixed;
+    justify-content: flex-start;
     top: 0;
     width: 100%;
     height: 29px;
     padding:20px;
     z-index:1px;
-    display: flex;
-    justify-content: space-between;
     transition: all 0.2s;
     background-image: linear-gradient(0deg,transparent,rgb(31, 31, 31));
 }
-
 .navbar__black{
     background-color: rgb(31, 31, 31);
 }
 
 .navbar__logo{
-    position: fixed;
     margin-left: 20px;
     width: 180px;
-    object-fit: contain;
     cursor: pointer;
 }
 
 .navbar__avatar{
-    position: fixed;
+    display: flex;
+    justify-self: flex-end;
     right: 20px;
     width: 30px;
-    object-fit: contain;
 }
 
 .nav__button{
-    position: fixed;
+    position: flex;
+    margin:0px 0px 0px 20px;
+    padding:5px 0px 0px 0px;
     color: white;
-    background-color: #ff2222a2;
     border: none;
-    padding: 4px;
-    margin: 4px 2px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -48,25 +45,5 @@
 }
 
 .nav__button:hover{
-    background-color: #ff2222e0;
-}
-
-.b1{
-    margin-left: 220px;
-    width: 90px;
-}
-
-.b2{
-    margin-left: 330px;
-    width: 90px;
-}
-
-.b3{
-    margin-left: 440px;
-    width: 90px;
-}
-
-.b4{
-    margin-left: 550px;
-    width: 90px;
+    color: rgb(182, 182, 182);
 }

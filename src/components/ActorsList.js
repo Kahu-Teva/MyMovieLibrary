@@ -1,5 +1,4 @@
 import React from 'react';
-// import axios from 'axios';
 import { useState, useEffect } from 'react';
 import "./../styles/ActorList.css"
 import { Link } from "react-router-dom";
