@@ -49,51 +49,48 @@ export default function MovieDetails() {
                     <div className="">back</div>
                 </Link>
                 <img src={movie.posterLink} className="linkPosterMovie" alt={movie.title}/>
-                <h3>{movie.title} ({movie.releaseDate}) </h3>
-               
-                <p>
-                    Duration: {movie.duration} min
-                </p>
+                <h1>{movie.title} ({movie.releaseDate}) </h1>
+                {movie.duration} min | Genre: {movie.genre.map(res => res + "|")}
+
                 <p>Synopsis: {movie.synopsis}</p>
-                <p>Genre: 
-                    {movie.genre.map(res => res + "|")}
-                </p>
+                
+                <h3>Directors:</h3>
+                {movie.directors.map(directorID => (
+                    peoples.map(people =>(
+                        (people._id===directorID)?(
+                        <div key={"actor"+people._id} className="actor__card">
+                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
+                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
+                            <span className="actor__name">{people.firstname} {people.lastname}</span>
+                        </Link>
+                        </div>):null
+                    ))
+                ))}
 
-                <p>Directors:
-                    <ul>
-                    {movie.directors.map(directorID =>
-                        (
-                            peoples.map(people =>(
-                                (people._id===directorID)?(<li key={"director"+people._id}> {people.firstname} {people.lastname} </li>):null
-                            ))
-                        )
-                    )}
-                    </ul>
-                </p>
-
-                <p>Writers:
-                    <ul>
-                    {movie.writers.map(writerID =>
-                        (
-                            peoples.map(people =>(
-                                (people._id===writerID)?(<li key={"writer"+people._id}> {people.firstname} {people.lastname} </li>):null
-                            ))
-                        )
-                    )}
-                    </ul>
-                </p>
-
-                <p>Actors:
-                    <ul>
-                    {movie.actors.map(actor =>
-                        (
-                            peoples.map(people =>(
-                                (people._id===actor._id)?(<li key={"actor"+people._id}> {people.firstname} {people.lastname} </li>):null
-                            ))
-                        )
-                    )}
-                    </ul>
-                </p>
+                <h3>Writers:</h3>
+                {movie.writers.map(writerID => (
+                    peoples.map(people =>(
+                        (people._id===writerID)?(
+                        <div key={"actor"+people._id} className="actor__card">
+                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
+                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
+                            <span className="actor__name">{people.firstname} {people.lastname}</span>
+                        </Link>
+                        </div>):null
+                    ))
+                ))}
+                <h3>Actors:</h3>
+                {movie.actors.map(actor => (
+                    peoples.map(people =>(
+                        (people._id===actor._id)?(
+                        <div key={"actor"+people._id} className="actor__card">
+                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
+                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
+                            <span className="actor__name">{people.firstname} {people.lastname}</span>
+                        </Link>
+                        </div>):null
+                    ))
+                ))}
             </div>
         );
     }
