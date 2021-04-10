@@ -48,7 +48,6 @@ export default function MovieDetails() {
                 <Link to="/" >
                     <div className="">back</div>
                 </Link>
-
                 <img src={movie.posterLink} className="linkPosterMovie" alt={movie.title}/>
                 <h3>{movie.title} ({movie.releaseDate}) </h3>
                
@@ -89,7 +88,7 @@ export default function MovieDetails() {
                     {movie.actors.map(actor =>
                         (
                             peoples.map(people =>(
-                                (people._id===actor.id)?(<li key={"actor"+people._id}> {people.firstname} {people.lastname} </li>):null
+                                (people._id===actor._id)?(<li key={"actor"+people._id}> {people.firstname} {people.lastname} </li>):null
                             ))
                         )
                     )}

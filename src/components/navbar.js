@@ -1,8 +1,8 @@
-import React, { useState, useEffect} from "react";
+import { React,  useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import logo_mml    from "./../assets/logo.png";
 import logo_avatar from "./../assets/avatar1.png";
 import "./../styles/Navbar.css";
-import { Link } from "react-router-dom";
 
 function Navbar(){
     const[show, handleShow] = useState(false);

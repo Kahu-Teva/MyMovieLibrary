@@ -1,15 +1,33 @@
 .row__detail{
     padding:0;
     width:100%;
+    background-color: black;
+}
+
+.row__detail_row_title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .row__detail_title{
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 800;
-    padding-bottom: 0.3rem;
-    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    background-color: black;
+    padding: 2px 20px 2px 2px;
+    border: 2px solid black;
+    border-radius: 0px 400px 0px 0px;
+}
+
+.link_more_info{
+    justify-content: flex-start;
+}
+.link_more_info_ico{
+
 }
 
 .ytPlayer{

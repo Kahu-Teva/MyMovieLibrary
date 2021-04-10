@@ -15,18 +15,12 @@ function ActorDetails() {
   // Fetching data
   useEffect(() => {
     let actorId = query.get("id");
-
-    // console.log('Query : ', query);
-    // console.log(`Actor ID : ${actorId}`);
-    // console.log(`Fetching actor details from ${process.env.REACT_APP_SERVER_API}...`);
     fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${actorId}`)
       .then(res => res.json())
       .then(
         (result) => {
-          console.log("Result : ", result);
           setIsLoaded(true);
           setWriter(result[0]);
-          // console.log("Writer : ", writer);
         },
         // Remarque : il faut gérer les erreurs ici plutôt que dans
         // un bloc catch() afin que nous n’avalions pas les exceptions
