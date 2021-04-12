@@ -32,7 +32,7 @@ function ActorDetails() {
   if (error) {
     return <div>Erreur : {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Chargement...</div>;
+    return <div className="people__load"/>;
   } else {    
     let birthdate = director.birthDate;
     let name = director.lastname.toUpperCase() + " " + director.firstname;
