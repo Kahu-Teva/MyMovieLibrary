@@ -1,10 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useLocation, Link} from "react-router-dom";
-//import './ActorDetails.css';
-
-function truncate(str, startTo, stopTo){
-  return str?.slice(startTo, stopTo);
-}
+import moment from 'moment'
+import './../styles/PeopleDetails.css';
 
 function ActorDetails() {
   let query = new URLSearchParams(useLocation().search);
@@ -19,15 +16,12 @@ function ActorDetails() {
     .then(res => res.json())
     .then(
       (result) => {
-        setIsLoaded(true);
         setActor(result[0]);
-      },
-      // Remarque : il faut gérer les erreurs ici plutôt que dans
-      // un bloc catch() afin que nous n’avalions pas les exceptions
-      // dues à de véritables bugs dans les composants.
-      (error) => {
         setIsLoaded(true);
+      },
+      (error) => {
         setError(error);
+        setIsLoaded(true);
       }
     )
   })
@@ -37,22 +31,20 @@ function ActorDetails() {
   } else if (!isLoaded) {
     return <div>Chargement...</div>;
   } else {    
-    let birtdate = actor.birthDate;
+    let birthdate = actor.birthDate;
+    let name = actor.lastname.toUpperCase() + " " + actor.firstname;
     return (
-      <div>
-        <Link to="/actors" >
-          <div className="">back</div>
-        </Link>
-        <h3>Détail de l'acteur</h3>
-        <div>
-          <p>Nom : {actor.lastname}</p>
-          <p>Prénom : {actor.firstname}</p>
+      <div className="peopledetails">
+        <img className="peopledetails__poster" src={actor.picture} alt={name}/>        
+        <div className="peopledetails__infos">
+          <h1>{name}</h1>
+          <h3>(Détails de l'acteur)</h3>
 
-          <p>Date de naissance : {truncate(birtdate,4,6)}/{truncate(birtdate,6,8)}/{truncate(birtdate,0,4)}</p>
+          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
           {(actor.deathDay === "")? (
-            <p>Date de décès : {truncate(actor.deathDay,7,8)}/{truncate(actor.deathDay,5,6)}/{truncate(actor.deathDay,1,4)}</p>
+            <p>Date de décès : {moment(actor.deathDay).format("DD/MM/YYYY")}</p>
           ) : null}
-          <p>Biographie: {actor.biography}</p>
+          <p className="peopledetails__biography">Biographie: {actor.biography}</p>
         </div>
       </div>
     );

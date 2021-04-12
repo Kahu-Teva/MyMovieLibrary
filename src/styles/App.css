@@ -2,7 +2,26 @@
   margin:0;
 }
 
-.App{
+.app{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
   background-color:rgb(31, 31, 31);
   color: aliceblue;
+}
+
+.app__is__load{
+  margin: auto;
+  width: 50%;
+  height: 80vh;
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-image: url("./../assets/logo.png");
+  animation: app_is_load 0.5s ease-in-out alternate infinite;
+}
+
+@keyframes app_is_load{
+  from{ transform: scale(1)}
+  to{ transform: scale(1.05)}
 }

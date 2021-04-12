@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useLocation, Link} from "react-router-dom";
+import moment from 'moment'
+import './../styles/PeopleDetails.css';
 
 function truncate(str, startTo, stopTo){
   return str?.slice(startTo, stopTo);
@@ -18,11 +20,11 @@ function ActorDetails() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setWriter(result[0]);
-        },(error) => {
           setIsLoaded(true);
+        },(error) => {
           setError(error);
+          setIsLoaded(true);
         }
       )
   })
@@ -31,23 +33,21 @@ function ActorDetails() {
     return <div>Erreur : {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Chargement...</div>;
-  } else {
-    let birtdate = writer.birthDate;
+  } else {    
+    let birthdate = writer.birthDate;
+    let name = writer.lastname.toUpperCase() + " " + writer.firstname;
     return (
-      <div>
-        <Link to="/writers" >
-          <div className="">back</div>
-        </Link>
-        <h3>Détail du scénariste</h3>
-        <div>
-          <p>Nom : {writer.lastname}</p>
-          <p>Prénom : {writer.firstname}</p>
+      <div className="peopledetails">
+        <img className="peopledetails__poster" src={writer.picture} alt={name}/>        
+        <div className="peopledetails__infos">
+          <h1>{name}</h1>
+          <h3>(Détails du scénariste)</h3>
 
-          <p>Date de naissance : {truncate(birtdate,4,6)}/{truncate(birtdate,6,8)}/{truncate(birtdate,0,4)}</p>
+          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
           {(writer.deathDay === "")? (
-            <p>Date de décès : {truncate(writer.deathDay,7,8)}/{truncate(writer.deathDay,5,6)}/{truncate(writer.deathDay,1,4)}</p>
+            <p>Date de décès : {moment(writer.deathDay).format("DD/MM/YYYY")}</p>
           ) : null}
-          <p>Biographie: {writer.biography}</p>
+          <p className="peopledetails__biography">Biographie: {writer.biography}</p>
         </div>
       </div>
     );

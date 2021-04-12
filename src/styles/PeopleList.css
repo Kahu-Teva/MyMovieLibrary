@@ -1,11 +1,11 @@
-.actors{
+.peoples{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.actor__card{
+.people__card{
     display: flex;
     width: 150px;
     height:240px;
@@ -14,7 +14,7 @@
     border-radius: 2px;
 }
 
-.actor__picture{
+.people__picture{
     width: 100%;
     height: 80%;
     object-fit: fill;
@@ -23,7 +23,7 @@
 a{
     text-decoration: none;
 }
-.actor__name{
+.people__name{
     display: flex;
     justify-content: center;
     width: 100%;

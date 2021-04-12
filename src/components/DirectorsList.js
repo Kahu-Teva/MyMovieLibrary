@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import "./../styles/ActorList.css"
+import "./../styles/PeopleList.css"
 import { Link } from "react-router-dom";
 
 export default function DirectorList(){
@@ -43,9 +43,9 @@ export default function DirectorList(){
   let directorsList = [];
   
   return (
-    <div className="actorsList">
-      <h2 className="actors__title">Liste des producteurs</h2>
-      <div className="actors">
+    <div className="diretors__list">
+      <h2 className>Liste des producteurs</h2>
+      <div className="peoples">
         { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
           movies.map(movie => (
@@ -58,10 +58,10 @@ export default function DirectorList(){
           )),
           directorsList = Array.from(new Set(directorsListDB)),
           directorsList.map(director => (
-            <div key={director._id} className="actor__card">
+            <div key={director._id} className="people__card">
               <Link key={director._id} to={`/directorDetails?id=${director._id}`}>
-                <img className="actor__picture" src={director.picture} alt={director.picture}/>
-                <span className="actor__name">{director.firstname} {director.lastname}</span>
+                <img className="people__picture" src={director.picture} alt={director.picture}/>
+                <span className="people__name">{director.firstname} {director.lastname}</span>
               </Link>
             </div>
           ))

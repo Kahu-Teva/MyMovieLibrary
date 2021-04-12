@@ -1,10 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useLocation, Link} from "react-router-dom";
-//import './ActorDetails.css';
-
-function truncate(str, startTo, stopTo){
-  return str?.slice(startTo, stopTo);
-}
+import moment from 'moment'
+import './../styles/PeopleDetails.css';
 
 function ActorDetails() {
   let query = new URLSearchParams(useLocation().search);
@@ -19,15 +16,15 @@ function ActorDetails() {
     .then(res => res.json())
     .then(
       (result) => {
-        setIsLoaded(true);
         setDirector(result[0]);
+        setIsLoaded(true);
       },
       // Remarque : il faut gérer les erreurs ici plutôt que dans
       // un bloc catch() afin que nous n’avalions pas les exceptions
       // dues à de véritables bugs dans les composants.
       (error) => {
-        setIsLoaded(true);
         setError(error);
+        setIsLoaded(true);
       }
     )
   })
@@ -37,22 +34,20 @@ function ActorDetails() {
   } else if (!isLoaded) {
     return <div>Chargement...</div>;
   } else {    
-    let birtdate = director.birthDate;
+    let birthdate = director.birthDate;
+    let name = director.lastname.toUpperCase() + " " + director.firstname;
     return (
-      <div>
-        <Link to="/directors" >
-          <div className="">back</div>
-        </Link>
-        <h3>Détail du producteur</h3>
-        <div>
-          <p>Nom : {director.lastname}</p>
-          <p>Prénom : {director.firstname}</p>
+      <div className="peopledetails">
+        <img className="peopledetails__poster" src={director.picture} alt={name}/>        
+        <div className="peopledetails__infos">
+          <h1>{name}</h1>
+          <h3>(Détails du producteur)</h3>
 
-          <p>Date de naissance : {truncate(birtdate,4,6)}/{truncate(birtdate,6,8)}/{truncate(birtdate,0,4)}</p>
+          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
           {(director.deathDay === "")? (
-            <p>Date de décès : {truncate(director.deathDay,7,8)}/{truncate(director.deathDay,5,6)}/{truncate(director.deathDay,1,4)}</p>
+            <p>Date de décès : {moment(director.deathDay).format("DD/MM/YYYY")}</p>
           ) : null}
-          <p>Biographie: {director.biography}</p>
+          <p className="peopledetails__biography">Biographie: {director.biography}</p>
         </div>
       </div>
     );

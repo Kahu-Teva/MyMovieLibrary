@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useLocation, Link} from "react-router-dom";
 import "./../styles/MovieDetails.css"
 
+
 export default function MovieDetails() {
     let query = new URLSearchParams(useLocation().search);
     const [error, setError] = useState(null);
@@ -36,61 +37,116 @@ export default function MovieDetails() {
             }
         )
     }, []);
-
+    let directors = [];
+    let writers = [];
+    let actors = [];
     if(error) {
         return <div>Erreur : {error.message}</div>;
     }else if (!isLoaded1 || !isLoaded2) {
         return <div>Chargement...</div>;
     }else {
-        
+        let nbDirectors;
+        let nbWriters;
+        let nbActors;
+
+        movie.directors.map(directorID => (
+            peoples.map((people) =>(
+                (people._id===directorID)?(
+                    nbDirectors = directors.push(people)
+                ):null
+            ))
+        ))
+
+        movie.writers.map(writerID => (
+            peoples.map((people) =>(
+                (people._id===writerID)?(
+                    nbWriters = writers.push(people)
+                ):null
+            ))
+        ))
+
+        movie.actors.map(actor => (
+            peoples.map((people) =>(
+                (people._id===actor._id)?(
+                    nbActors = actors.push(people)
+                ):null
+            ))
+        ))
         return (
-            <div>
-                <Link to="/" >
-                    <div className="">back</div>
-                </Link>
-                <img src={movie.posterLink} className="linkPosterMovie" alt={movie.title}/>
-                <h1>{movie.title} ({movie.releaseDate}) </h1>
-                {movie.duration} min | Genre: {movie.genre.map(res => res + "|")}
+            <div className="moviedetails">
+                <img className="moviedetails__poster" src={movie.posterLink} alt={movie.title}/>            
+                <div className="moviedetails__infos">
+                    <h1>
+                        {movie.title} ({movie.releaseDate})
+                    </h1>
+                    
+                    <p className="moviedetails__duration__genre">
+                    {movie.duration} min | {movie.genre.map((currentGenre,index) => (
+                        (index+1===movie.genre.length)? " "+currentGenre.toUpperCase() : " "+currentGenre.toUpperCase() + ", "
+                    ))}
+                    </p>
 
-                <p>Synopsis: {movie.synopsis}</p>
-                
-                <h3>Directors:</h3>
-                {movie.directors.map(directorID => (
-                    peoples.map(people =>(
-                        (people._id===directorID)?(
-                        <div key={"actor"+people._id} className="actor__card">
-                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
-                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
-                            <span className="actor__name">{people.firstname} {people.lastname}</span>
-                        </Link>
-                        </div>):null
-                    ))
-                ))}
+                    <p className="moviedetails__synopsis">
+                        {movie.synopsis}
+                    </p>
+                    
+                    <p>
+                        <h3>
+                            Director:
+                        </h3>
+                        {
+                            directors.map((director,index) => (
+                                (index+1 === nbDirectors)? (
+                                    <Link key={director._id} to={`/directorDetails?id=${director._id}`}>
+                                        {" "+director.firstname} {director.lastname.toUpperCase()}.
+                                    </Link>
+                                    ) : (
+                                        <Link key={director._id} to={`/directorDetails?id=${director._id}`}>
+                                        {" "+director.firstname} {director.lastname.toUpperCase()},
+                                    </Link>
+                                )
+                            ))
+                        }
+                    </p>
 
-                <h3>Writers:</h3>
-                {movie.writers.map(writerID => (
-                    peoples.map(people =>(
-                        (people._id===writerID)?(
-                        <div key={"actor"+people._id} className="actor__card">
-                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
-                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
-                            <span className="actor__name">{people.firstname} {people.lastname}</span>
-                        </Link>
-                        </div>):null
-                    ))
-                ))}
-                <h3>Actors:</h3>
-                {movie.actors.map(actor => (
-                    peoples.map(people =>(
-                        (people._id===actor._id)?(
-                        <div key={"actor"+people._id} className="actor__card">
-                        <Link key={people._id} to={`/actorDetails?id=${people._id}`}>
-                            <img className="actor__picture" src={people.picture} alt={people.picture}/>
-                            <span className="actor__name">{people.firstname} {people.lastname}</span>
-                        </Link>
-                        </div>):null
-                    ))
-                ))}
+                    <p>
+                        <h3>
+                            Writers:
+                        </h3>
+                        {
+                            writers.map((writer,index) => (
+                                (index+1 === nbWriters)? (
+                                    <Link key={writer._id} to={`/writerDetails?id=${writer._id}`}>
+                                        {" "+writer.firstname} {writer.lastname.toUpperCase()}.
+                                    </Link>
+                                    ) : (
+                                        <Link key={writer._id} to={`/writerDetails?id=${writer._id}`}>
+                                        {" "+writer.firstname} {writer.lastname.toUpperCase()},
+                                    </Link>
+                                )
+                                ))
+                        }
+                    </p>
+                    
+                    <p>
+                        <h3>
+                            Actors:
+                        </h3>
+                        {
+                            actors.map((actor,index) => (
+                            (index+1 === nbActors)? (
+                                    <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
+                                        {" "+actor.firstname} {actor.lastname.toUpperCase()}.
+                                    </Link>
+                                    ) : (
+                                    <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
+                                        {" "+actor.firstname} {actor.lastname.toUpperCase()},
+                                    </Link>
+                                )
+                            ))
+                        }
+                    </p>
+                </div>
             </div>
         );
     }

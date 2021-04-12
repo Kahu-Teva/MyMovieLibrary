@@ -35,3 +35,175 @@
     width: 100%;
     height: 80%;
 }
+
+
+/* #############################################LOADING######################################################### */
+
+
+.row__title__loading{
+    width: 250px;
+    height: 32px;
+    margin:10px 0 0 10px;
+    background-color: rgba(255, 255, 255, 0.055);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.064);
+}
+
+.row__posters__loading{
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 15px 0px 15px 15px;
+}
+
+.row__poster__loading{
+    width: 150px;
+    height: 250px;
+    margin:1% 4% 0 0;
+    transition: transform 480ms;
+}
+
+.row__posters__loading::-webkit-scrollbar{
+    display: none;
+}
+
+.r1{
+    background-color: rgba(255, 255, 255, 0.164);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    animation: r1 2s linear infinite;
+}
+
+@keyframes r1{
+    0%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    15%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+    30%{ 
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.r2{
+    background-color: rgba(255, 255, 255, 0.164);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    animation: r2 2s linear infinite;
+}
+
+@keyframes r2{
+    0%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    5%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    20%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+    35%{ 
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.r3{
+    background-color: rgba(255, 255, 255, 0.164);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    animation: r3 2s linear infinite;
+}
+
+@keyframes r3{
+    0%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    10%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    25%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+    40%{ 
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.r4{
+    background-color: rgba(255, 255, 255, 0.164);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    animation: r4 2s linear infinite;
+}
+
+@keyframes r4{
+    0%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    15%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    30%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+    45%{ 
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.r5{
+    background-color: rgba(255, 255, 255, 0.164);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    animation: r5 2s linear infinite;
+}
+
+@keyframes r5{
+    0%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    25%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    40%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+    55%{ 
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}

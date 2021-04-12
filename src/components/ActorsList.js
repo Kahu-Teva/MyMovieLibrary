@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import "./../styles/ActorList.css"
+import "./../styles/PeopleList.css"
 import { Link } from "react-router-dom";
 
 function ActorsList() {
@@ -43,9 +43,9 @@ function ActorsList() {
   let actorsList = [];
   
   return (
-    <div className="actorsList">
-      <h2 className="actors__title">Liste des acteurs</h2>
-      <div className="actors">
+    <div className="actors__list">
+      <h2 >Liste des acteurs</h2>
+      <div className="peoples">
         { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
           
           movies.map(movie => (
@@ -58,10 +58,10 @@ function ActorsList() {
           )),
           actorsList = Array.from(new Set(actorsListDB)),
           actorsList.map(actor => (
-            <div key={actor._id} className="actor__card">
+            <div key={actor._id} className="people__card">
               <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
-                <img className="actor__picture" src={actor.picture} alt={actor.picture}/>
-                <span className="actor__name">{actor.firstname} {actor.lastname}</span>
+                <img className="people__picture" src={actor.picture} alt={actor.picture}/>
+                <span className="people__name">{actor.firstname} {actor.lastname}</span>
               </Link>
             </div>
           ))
