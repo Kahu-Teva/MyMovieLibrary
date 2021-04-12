@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
-import "./../styles/PeopleList.css"
 import { Link } from "react-router-dom";
+import "./../styles/PeopleList.css"
 
 export default function DirectorList(){
   const [error, setError] = useState(null);
