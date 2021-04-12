@@ -43,7 +43,7 @@ export default function MovieDetails() {
     if(error) {
         return <div>Erreur : {error.message}</div>;
     }else if (!isLoaded1 || !isLoaded2) {
-        return <div>Chargement...</div>;
+        return <div className="movie__load"/>;
     }else {
         let nbDirectors;
         let nbWriters;
