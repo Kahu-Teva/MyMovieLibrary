@@ -9,7 +9,6 @@ function ActorsList() {
   const [peoples, setPeoples] = useState([]);
   const [movies, setMovies] = useState([]);
 
-  // Fetching data
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
     .then(res => res.json())
@@ -43,10 +42,17 @@ function ActorsList() {
   
   return (
     <div className="actors__list">
-      <h2 >Liste des acteurs</h2>
+      <h2>Liste des acteurs</h2>
       <div className="peoples">
-        { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
-          
+        { (!isLoaded || !isLoaded2) ? ( 
+          <div className="list__load">
+            <div className="people__card r1"/>
+            <div className="people__card r2"/>
+            <div className="people__card r3"/>
+            <div className="people__card r4"/>
+            <div className="people__card r5"/>
+          </div>
+         ) : (
           movies.map(movie => (
             movie.actors.map(actor=>(
               peoples.map(people => (

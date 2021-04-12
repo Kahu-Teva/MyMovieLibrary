@@ -45,8 +45,16 @@ export default function WriterList(){
     <div className="actors__list">
       <h2>Liste des scénaristes</h2>
       <div className="peoples">
-        { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
-          
+      { 
+        (!isLoaded || !isLoaded2) ? ( 
+          <div className="list__load">
+            <div className="people__card r1"/>
+            <div className="people__card r2"/>
+            <div className="people__card r3"/>
+            <div className="people__card r4"/>
+            <div className="people__card r5"/>
+          </div>
+        ) : (
           movies.map(movie => (
             movie.writers.map(writer=>(
               peoples.map(people => (

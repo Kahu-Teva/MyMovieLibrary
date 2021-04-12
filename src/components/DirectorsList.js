@@ -45,8 +45,16 @@ export default function DirectorList(){
     <div className="diretors__list">
       <h2 className>Liste des producteurs</h2>
       <div className="peoples">
-        { (!isLoaded || !isLoaded2) ? ( <div>Chargement...</div> ) : (
-          
+      { 
+        (!isLoaded || !isLoaded2) ? ( 
+          <div className="list__load">
+            <div className="people__card r1"/>
+            <div className="people__card r2"/>
+            <div className="people__card r3"/>
+            <div className="people__card r4"/>
+            <div className="people__card r5"/>
+          </div>
+        ) : (
           movies.map(movie => (
             movie.directors.map(director=>(
               peoples.map(people => (
