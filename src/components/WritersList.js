@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import "./../styles/PeopleList.css"
+import {React, useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import "./../styles/PeopleList.css"
 
 export default function WriterList(){
   const [error, setError] = useState(null);

@@ -1,17 +1,17 @@
 import { React, useState, useEffect } from 'react';
-import Navbar    from "./navbar.js"
-import Banner from "./banner.js"
-import Row    from "./row.js"
-import Space    from "./Space.js"
-import ActorsList    from "./ActorsList.js"
-import ActorDetails from "./ActorDetails.js";
-import WritersList from "./WritersList.js";
-import WriterDetails from "./WriterDetails.js";
-import MovieDetails from "./MovieDetails.js";
-import DirectorList from './DirectorsList.js';
-import DirectorDetails from "./DirectorDetails";
-import Footer from "./Footer.js"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Banner          from "./banner.js"
+import Navbar          from "./navbar.js"
+import Space           from "./Space.js"
+import Row             from "./row.js"
+import MovieDetails    from "./MovieDetails.js";
+import ActorsList      from "./ActorsList.js"
+import ActorDetails    from "./ActorDetails.js";
+import WritersList     from "./WritersList.js";
+import WriterDetails   from "./WriterDetails.js";
+import DirectorList    from './DirectorsList.js';
+import DirectorDetails from "./DirectorDetails";
+import Footer          from "./Footer.js"
 import './../styles/App.css';
 
 export default function App() {
@@ -21,7 +21,6 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [movies, setMovies] = useState([]);
 
-  // Fetching data
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
     .then(res => res.json())
@@ -36,12 +35,9 @@ export default function App() {
       }
     )
   }, []);
-
-
   
   if(!isLoaded){
-    return(<div className="app__is__load">
-    </div>);
+    return(<div className="app__is__load"/>);
   }
   else{
     movies.map(movie =>(

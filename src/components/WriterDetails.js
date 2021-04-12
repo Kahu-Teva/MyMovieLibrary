@@ -1,11 +1,7 @@
 import { React, useState, useEffect } from 'react';
-import { useLocation, Link} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import moment from 'moment'
 import './../styles/PeopleDetails.css';
-
-function truncate(str, startTo, stopTo){
-  return str?.slice(startTo, stopTo);
-}
 
 function ActorDetails() {
   let query = new URLSearchParams(useLocation().search);
