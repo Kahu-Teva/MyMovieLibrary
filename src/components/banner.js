@@ -58,11 +58,11 @@ export default function Banner() {
                             {truncate(description,150)}
                         </p>
                         <div className="banner__buttons">                    
-                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_play">
+                        <Link to={`/movieDetails/${idMovie}`} className="banner__button button_play">
                             <div className="banner__button_ico"/>
                             <span>Lecture</span>
                         </Link>  
-                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_more_info">
+                        <Link to={`/movieDetails/${idMovie}`} className="banner__button button_more_info">
                             <div className="banner__button_ico"/>
                             <span>Plus d'infos</span>
                         </Link>                

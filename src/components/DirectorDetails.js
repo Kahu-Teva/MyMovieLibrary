@@ -12,7 +12,7 @@ function ActorDetails() {
   // Fetching data
   useEffect(() => {
     let directorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${directorId}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/directors/${directorId}`)
     .then(res => res.json())
     .then(
       (result) => {

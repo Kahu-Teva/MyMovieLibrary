@@ -5,34 +5,19 @@ import { Link } from "react-router-dom";
 function ActorsList() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoaded2, setIsLoaded2] = useState(false);
-  const [peoples, setPeoples] = useState([]);
-  const [movies, setMovies] = useState([]);
+  const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/actors`)
     .then(res => res.json())
     .then(
       (result) => {
-        setMovies(result);
+        setActors(result);
         setIsLoaded(true);
       },
       (error) => {
         setIsLoaded(true);
         setError(error);
-      }
-    )
-
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples`)
-    .then(res2 => res2.json())
-    .then(
-      (result2) => {
-        setPeoples(result2);
-        setIsLoaded2(true);
-      },
-      (error) => {
-        setError(error);
-        setIsLoaded2(true);
       }
     )
   }, []);
@@ -44,7 +29,7 @@ function ActorsList() {
     <div className="actors__list">
       <h2>Liste des acteurs</h2>
       <div className="peoples">
-        { (!isLoaded || !isLoaded2) ? ( 
+        { (!isLoaded ) ? ( 
           <div className="list__load">
             <div className="people__card r1"/>
             <div className="people__card r2"/>
@@ -53,16 +38,7 @@ function ActorsList() {
             <div className="people__card r5"/>
           </div>
          ) : (
-          movies.map(movie => (
-            movie.actors.map(actor=>(
-              peoples.map(people => (
-                (actor._id === people._id )? 
-                actorsListDB.push(people) : null
-              ))  
-            ))
-          )),
-          actorsList = Array.from(new Set(actorsListDB)),
-          actorsList.map(actor => (
+          actors.map(actor => (
             <div key={actor._id} className="people__card">
               <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
                 <img className="people__picture" src={actor.picture} alt={actor.picture}/>
