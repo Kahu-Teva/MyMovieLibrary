@@ -9,10 +9,9 @@ function ActorDetails() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [actor, setActor] = useState([]);
 
-  // Fetching data
   useEffect(() => {
     let actorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${actorId}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/actorDetails?id=${actorId}`)
     .then(res => res.json())
     .then(
       (result) => {
@@ -38,13 +37,12 @@ function ActorDetails() {
         <img className="peopledetails__poster" src={actor.picture} alt={name}/>        
         <div className="peopledetails__infos">
           <h1>{name}</h1>
-          <h3>(Détails de l'acteur)</h3>
 
-          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
+          <p>Born : {moment(birthdate).format("LL")}</p>
           {(actor.deathDay === "")? (
-            <p>Date de décès : {moment(actor.deathDay).format("DD/MM/YYYY")}</p>
+            <p>Date de décès : {moment(actor.deathDay).format("LL")}</p>
           ) : null}
-          <p className="peopledetails__biography">Biographie: {actor.biography}</p>
+          <p className="peopledetails__biography">Biography: {actor.biography}</p>
         </div>
       </div>
     );

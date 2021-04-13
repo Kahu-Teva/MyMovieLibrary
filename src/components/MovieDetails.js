@@ -13,7 +13,7 @@ export default function MovieDetails() {
 
     useEffect(() => {
         let movieId = query.get("id");
-        fetch(`${process.env.REACT_APP_SERVER_API}/movies?_id=${movieId}`)
+        fetch(`${process.env.REACT_APP_SERVER_API}/movieDetails?id=${movieId}`)
         .then(res => res.json())
         .then(
             (result) => {

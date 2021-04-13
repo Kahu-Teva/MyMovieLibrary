@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import RowDetail from "./rowDetail.js";
+import RowDetail from "./RowDetail.js";
 import "./../styles/Row.css"
 
 function Row({title,category}){
@@ -71,14 +71,14 @@ function Row({title,category}){
     else{
         let printTitle;
         switch(category){
-            case ("sf"): printTitle = "Science Fiction"; break;
-            case ("drama"): printTitle = "Drames"; break;
+            case ("sf"): printTitle = "Science fiction"; break;
+            case ("drama"): printTitle = "Drama"; break;
             case ("romance"): printTitle = "Romance"; break;
             case ("action"): printTitle = "Action"; break;
-            case ("thriller"): printTitle = "Policier"; break;
-            case ("adventure"): printTitle = "Aventure"; break;
-            case ("fanstasy"): printTitle = "Fantastique"; break;
-            default: printTitle = "Liste des films sur MML";
+            case ("thriller"): printTitle = "Thriller"; break;
+            case ("adventure"): printTitle = "Adventure"; break;
+            case ("fanstasy"): printTitle = "Fantastic"; break;
+            default: printTitle = "The biggest hits on MyMovieLibrary";
         }
         return (
             <div className="row">

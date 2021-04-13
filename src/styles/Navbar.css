@@ -1,6 +1,6 @@
 .navbar{
     position: fixed;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     top: 0;
@@ -21,10 +21,13 @@
     width: 180px;
     cursor: pointer;
 }
+
 .nav__avatar{
     display: flex;
+    justify-self: flex-end;
+    width: 29px;
+    height: 29px;
 }
-
 .nav__button{
     margin:0px 0px 0px 20px;
     padding:5px 0px 0px 0px;

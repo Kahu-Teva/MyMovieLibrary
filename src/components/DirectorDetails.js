@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import moment from 'moment'
 import './../styles/PeopleDetails.css';
 
-function ActorDetails() {
+function DirectorDetails() {
   let query = new URLSearchParams(useLocation().search);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -12,7 +12,7 @@ function ActorDetails() {
   // Fetching data
   useEffect(() => {
     let directorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples?_id=${directorId}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/directorDetails?id=${directorId}`)
     .then(res => res.json())
     .then(
       (result) => {
@@ -41,17 +41,16 @@ function ActorDetails() {
         <img className="peopledetails__poster" src={director.picture} alt={name}/>        
         <div className="peopledetails__infos">
           <h1>{name}</h1>
-          <h3>(Détails du producteur)</h3>
 
-          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
+          <p>Born : {moment(birthdate).format("LL")}</p>
           {(director.deathDay === "")? (
-            <p>Date de décès : {moment(director.deathDay).format("DD/MM/YYYY")}</p>
+            <p>Date de décès : {moment(director.deathDay).format("LL")}</p>
           ) : null}
-          <p className="peopledetails__biography">Biographie: {director.biography}</p>
+          <p className="peopledetails__biography">Biography: {director.biography}</p>
         </div>
       </div>
     );
   }
 }
 
-export default ActorDetails;
+export default DirectorDetails;
