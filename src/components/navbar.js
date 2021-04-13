@@ -1,6 +1,7 @@
 import { React,  useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import logo_mml    from "./../assets/logo.png";
+  // eslint-disable-next-line no-unused-vars
 import logo_avatar from "./../assets/avatar1.png";
 import "./../styles/Navbar.css";
 

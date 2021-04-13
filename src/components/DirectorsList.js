@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./../styles/PeopleList.css"
 
 export default function DirectorList(){
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [directors, seDirectors] = useState([]);

@@ -5,6 +5,7 @@ import './../styles/PeopleDetails.css';
 
 function DirectorDetails() {
   let query = new URLSearchParams(useLocation().search);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [director, setDirector] = useState([]);

@@ -5,6 +5,7 @@ import "./../styles/MovieDetails.css"
 
 export default function MovieDetails() {
     let query = new URLSearchParams(useLocation().search);
+  // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded1, setIsLoaded1] = useState(false);
     const [isLoaded2, setIsLoaded2] = useState(false);

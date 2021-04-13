@@ -20,6 +20,7 @@ import "./../styles/Authentification.css"
 export default function App() {
   let genreHaveDB = [];
   let genreNoDB = [];
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [movies, setMovies] = useState([]);

@@ -3,6 +3,7 @@ import "./../styles/PeopleList.css"
 import { Link } from "react-router-dom";
 
 function ActorsList() {
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [actors, setActors] = useState([]);

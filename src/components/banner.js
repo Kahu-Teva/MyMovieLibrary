@@ -7,6 +7,7 @@ function truncate(str, n){
 }
 
 export default function Banner() {
+  // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
