@@ -26,10 +26,11 @@ export default function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movies`)
     .then(res => res.json())
     .then(
       (result) => {
+        console.log(result);
         setMovies(result);
         setIsLoaded(true);
       },

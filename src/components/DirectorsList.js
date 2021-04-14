@@ -10,7 +10,7 @@ export default function DirectorList(){
 
   // Fetching data
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/directors`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/directors`)
     .then(res => res.json())
     .then(
       (result) => {

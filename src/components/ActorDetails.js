@@ -11,7 +11,7 @@ function ActorDetails() {
 
   useEffect(() => {
     let actorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/actorDetails?id=${actorId}`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/actorDetails?id=${actorId}`)
     .then(res => res.json())
     .then(
       (result) => {
@@ -19,6 +19,7 @@ function ActorDetails() {
         setIsLoaded(true);
       },
       (error) => {
+        console.log("error: ", error);
         setError(error);
         setIsLoaded(true);
       }

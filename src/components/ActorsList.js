@@ -9,7 +9,7 @@ function ActorsList() {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/actors`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/actors`)
     .then(res => res.json())
     .then(
       (result) => {

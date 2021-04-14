@@ -13,7 +13,7 @@ function DirectorDetails() {
   // Fetching data
   useEffect(() => {
     let directorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/directorDetails?id=${directorId}`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/directorDetails?id=${directorId}`)
     .then(res => res.json())
     .then(
       (result) => {

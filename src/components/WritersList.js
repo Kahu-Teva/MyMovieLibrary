@@ -10,7 +10,7 @@ export default function WriterList(){
 
   // Fetching data
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/writers`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/writers`)
     .then(res => res.json())
     .then(
       (result) => {

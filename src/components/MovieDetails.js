@@ -14,7 +14,7 @@ export default function MovieDetails() {
 
     useEffect(() => {
         let movieId = query.get("id");
-        fetch(`${process.env.REACT_APP_SERVER_API}/movieDetails?id=${movieId}`)
+        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movieDetails?id=${movieId}`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -26,7 +26,7 @@ export default function MovieDetails() {
                 setError(error);
             }
         )
-        fetch(`${process.env.REACT_APP_SERVER_API}/peoples`)
+        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/peoples`)
         .then(res => res.json())
         .then(result => {
                 setPeoples(result);
@@ -38,15 +38,15 @@ export default function MovieDetails() {
             }
         )
     }, []);
-    let directors = [];
+    /* let directors = [];
     let writers = [];
-    let actors = [];
+    let actors = []; */
     if(error) {
         return <div>Erreur : {error.message}</div>;
     }else if (!isLoaded1 || !isLoaded2) {
         return <div className="movie__load"/>;
     }else {
-        let nbDirectors;
+        /* let nbDirectors;
         let nbWriters;
         let nbActors;
 
@@ -72,7 +72,7 @@ export default function MovieDetails() {
                     nbActors = actors.push(people)
                 ):null
             ))
-        ))
+        )) */
         return (
             <div className="moviedetails">
                 <img className="moviedetails__poster" src={movie.posterLink} alt={movie.title}/>            
@@ -91,7 +91,7 @@ export default function MovieDetails() {
                         {movie.synopsis}
                     </p>
                     
-                    <p>
+                   {/*  <p>
                         <h3>
                             Director:
                         </h3>
@@ -146,7 +146,7 @@ export default function MovieDetails() {
                                 )
                             ))
                         }
-                    </p>
+                    </p> */}
                 </div>
             </div>
         );

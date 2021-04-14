@@ -18,7 +18,7 @@ export default function Banner() {
     const [bgBanner, setBgBanner] = useState('');
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_SERVER_API + "/movies")
+        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movies`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -35,6 +35,7 @@ export default function Banner() {
 
     function getRandomMovie(tabMovies){
         const idMovie = Math.floor(Math.random() * tabMovies.length);
+        console.log(tabMovies);
         setIdMovie(tabMovies[idMovie]._id);
         setTitleMovie(tabMovies[idMovie].title);
         setDescription(truncate(tabMovies[idMovie].synopsis));

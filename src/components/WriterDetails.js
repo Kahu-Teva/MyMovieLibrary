@@ -13,7 +13,7 @@ function WriterDetails() {
   // Fetching data
   useEffect(() => {
     let writerId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/writerDetails?id=${writerId}`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/writerDetails?id=${writerId}`)
       .then(res => res.json())
       .then(
         (result) => {
