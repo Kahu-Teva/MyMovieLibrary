@@ -18,15 +18,20 @@ export default function MovieDetails() {
         .then(res => res.json())
         .then(
             (result) => {
-                setMovie(result[0]);
-                setIsLoaded1(true);
+                if(!result.error){
+                    setMovie(result);
+                    setIsLoaded1(true);
+                }
+                else{
+                    setError(result);
+                }
             },
             (error) => {
                 setIsLoaded1(true);
                 setError(error);
             }
         )
-        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/peoples`)
+        /* fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/peoples`)
         .then(res => res.json())
         .then(result => {
                 setPeoples(result);
@@ -36,14 +41,29 @@ export default function MovieDetails() {
                 setIsLoaded2(true);
                 setError(error);
             }
-        )
+        ) */
     }, []);
     /* let directors = [];
     let writers = [];
     let actors = []; */
     if(error) {
-        return <div>Erreur : {error.message}</div>;
-    }else if (!isLoaded1 || !isLoaded2) {
+        switch(error.error){
+            case "ERROR_MOVIE_NOT_FOUND":{
+                return (<div className="error__page">
+                    <div className="error__page__title">We apologize for this interruption</div>
+                    <div className="error__page__info">
+                        <div className="error__page__info__text">This title is currently not available in your country. A wide choice of programs awaits you on the home page.</div>
+                        <div className="error__page__info__error__code">Error code: {error.error}</div>
+                    </div>
+                </div>);
+            }
+            default:
+                return (<div>
+                    Error : {error.error}
+                </div>);
+        }
+        
+    }else if (!isLoaded1 /* || !isLoaded2 */) {
         return <div className="movie__load"/>;
     }else {
         /* let nbDirectors;
@@ -82,9 +102,9 @@ export default function MovieDetails() {
                     </h1>
                     
                     <p className="moviedetails__duration__genre">
-                    {movie.duration} min | {movie.genre.map((currentGenre,index) => (
+                    {movie.duration} min | {/* {movie.genre.map((currentGenre,index) => (
                         (index+1===movie.genre.length)? " "+currentGenre.toUpperCase() : " "+currentGenre.toUpperCase() + ", "
-                    ))}
+                    ))} */}
                     </p>
 
                     <p className="moviedetails__synopsis">

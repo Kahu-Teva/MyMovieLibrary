@@ -30,11 +30,11 @@ export default function App() {
     .then(res => res.json())
     .then(
       (result) => {
-        console.log(result);
         setMovies(result);
         setIsLoaded(true);
       },
       (error) => {
+        console.log(error);
         setIsLoaded(true);
         setError(error);
       }

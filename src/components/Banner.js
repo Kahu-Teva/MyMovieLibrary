@@ -10,19 +10,14 @@ export default function Banner() {
   // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-
-    const [movies, setMovies] = useState([]);
-    const [idMovieG, setIdMovie] = useState(null);
-    const [titleMovie, setTitleMovie] = useState('');
-    const [description, setDescription] = useState('');
-    const [bgBanner, setBgBanner] = useState('');
+    const [movie, setMovie] = useState([]);
 
     useEffect(() => {
-        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movies`)
+        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/randomMovie`)
         .then(res => res.json())
         .then(
             (result) => {
-                setMovies(result);
+                setMovie(result);
                 setIsLoaded(true);
             },
             (error) => {
@@ -33,74 +28,54 @@ export default function Banner() {
     },
     [])
 
-    function getRandomMovie(tabMovies){
-        const idMovie = Math.floor(Math.random() * tabMovies.length);
-        console.log(tabMovies);
-        setIdMovie(tabMovies[idMovie]._id);
-        setTitleMovie(tabMovies[idMovie].title);
-        setDescription(truncate(tabMovies[idMovie].synopsis));
-        setBgBanner(tabMovies[idMovie].posterLink);
-    }
-
     if(!isLoaded){
+        return(<header>
+            <div className="banner">
+                <div className="banner__contents">
+                    <h1 className="banner__title">{movie.title}</h1>
+                    <p className="banner__description">
+                        {truncate(movie.synopsis,150)}
+                    </p>
+                    <div className="banner__buttons">                    
+                    <div className="banner__button button_play">
+                        <div className="banner__button_ico"/>
+                        <span>Play</span>
+                    </div>  
+                    <div className="banner__button button_more_info">
+                        <div className="banner__button_ico"/>
+                        <span>More infos</span>
+                    </div>                
+                    </div>
+                </div>
+                <div className="banner__fadeBottom"></div>
+            
+            </div>
+        </header>)
+    }
+    else{
         return (
             <header>
                 <div className="banner"
                     style={{
                         backgroundSize:`cover`,
-                        backgroundImage: `url(`+bgBanner+`)`,
+                        backgroundImage: `url(`+movie.posterLink+`)`,
                         backgroundPosition:`center center`
                     }}
                 >
                     <div className="banner__contents">
-                        <h1 className="banner__title">{titleMovie}</h1>
+                        <h1 className="banner__title">{movie.title}</h1>
                         <p className="banner__description">
-                            {truncate(description,150)}
+                            {truncate(movie.synopsis,150)}
                         </p>
                         <div className="banner__buttons">                    
-                        <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_play">
+                        <Link to={`/movieDetails?id=${movie._id}`} className="banner__button button_play">
                             <div className="banner__button_ico"/>
                             <span>Play</span>
                         </Link>  
-                        <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_more_info">
+                        <Link to={`/movieDetails?id=${movie._id}`} className="banner__button button_more_info">
                             <div className="banner__button_ico"/>
                             <span>More infos</span>
                         </Link>                
-                        </div>
-                    </div>
-                    <div className="banner__fadeBottom"></div>
-                
-                </div>
-            </header>
-        )
-    }
-    else{
-        getRandomMovie(movies);
-        setIsLoaded(false);
-        return (
-            <header>
-                <div className="banner"
-                    style={{
-                        backgroundSize:`cover`,
-                        backgroundImage: `url(`+bgBanner+`)`,
-                        backgroundPosition:`center center`
-                    }}
-                >
-    
-                    <div className="banner__contents">
-                        <h1 className="banner__title">{titleMovie}</h1>
-                        <p className="banner__description">
-                            {truncate(description,150)}
-                        </p>
-                        <div className="banner__buttons">                    
-                            <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_play">
-                                <div className="banner__button_ico"/>
-                                <span>Play</span>
-                            </Link>  
-                            <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_more_info">
-                                <div className="banner__button_ico"/>
-                                <span>More infos</span>
-                            </Link>        
                         </div>
                     </div>
                     <div className="banner__fadeBottom"></div>
