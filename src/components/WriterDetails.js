@@ -3,16 +3,17 @@ import { useLocation } from "react-router-dom";
 import moment from 'moment'
 import './../styles/PeopleDetails.css';
 
-function ActorDetails() {
+function WriterDetails() {
   let query = new URLSearchParams(useLocation().search);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [writer, setWriter] = useState([]);
 
   // Fetching data
   useEffect(() => {
-    let actorId = query.get("id");
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples/${actorId}`)
+    let writerId = query.get("id");
+    fetch(`${process.env.REACT_APP_SERVER_API}/writerDetails?id=${writerId}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -37,17 +38,16 @@ function ActorDetails() {
         <img className="peopledetails__poster" src={writer.picture} alt={name}/>        
         <div className="peopledetails__infos">
           <h1>{name}</h1>
-          <h3>(Détails du scénariste)</h3>
 
-          <p>Date de naissance : {moment(birthdate).format("DD/MM/YYYY")}</p>
+          <p>Born : {moment(birthdate).format("LL")}</p>
           {(writer.deathDay === "")? (
-            <p>Date de décès : {moment(writer.deathDay).format("DD/MM/YYYY")}</p>
+            <p>Date de décès : {moment(writer.deathDay).format("LL")}</p>
           ) : null}
-          <p className="peopledetails__biography">Biographie: {writer.biography}</p>
+          <p className="peopledetails__biography">Biography: {writer.biography}</p>
         </div>
       </div>
     );
   }
 }
 
-export default ActorDetails;
+export default WriterDetails;

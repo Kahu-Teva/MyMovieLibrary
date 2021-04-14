@@ -7,17 +7,16 @@ function truncate(str, n){
 }
 
 export default function Banner() {
+  // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
     const [movies, setMovies] = useState([]);
-    const [idMovie, setIdMovie] = useState(null);
+    const [idMovieG, setIdMovie] = useState(null);
     const [titleMovie, setTitleMovie] = useState('');
     const [description, setDescription] = useState('');
     const [bgBanner, setBgBanner] = useState('');
 
-    // Fetching data
-    console.log(`"Fetching data from ${process.env.REACT_APP_SERVER_API}...`);
     useEffect(() => {
         fetch(process.env.REACT_APP_SERVER_API + "/movies")
         .then(res => res.json())
@@ -58,13 +57,13 @@ export default function Banner() {
                             {truncate(description,150)}
                         </p>
                         <div className="banner__buttons">                    
-                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_play">
+                        <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_play">
                             <div className="banner__button_ico"/>
-                            <span>Lecture</span>
+                            <span>Play</span>
                         </Link>  
-                        <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_more_info">
+                        <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_more_info">
                             <div className="banner__button_ico"/>
-                            <span>Plus d'infos</span>
+                            <span>More infos</span>
                         </Link>                
                         </div>
                     </div>
@@ -93,13 +92,13 @@ export default function Banner() {
                             {truncate(description,150)}
                         </p>
                         <div className="banner__buttons">                    
-                            <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_play">
+                            <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_play">
                                 <div className="banner__button_ico"/>
-                                <span>Lecture</span>
+                                <span>Play</span>
                             </Link>  
-                            <Link to={`/movieDetails?id=${idMovie}`} className="banner__button button_more_info">
+                            <Link to={`/movieDetails?id=${idMovieG}`} className="banner__button button_more_info">
                                 <div className="banner__button_ico"/>
-                                <span>Plus d'infos</span>
+                                <span>More infos</span>
                             </Link>        
                         </div>
                     </div>

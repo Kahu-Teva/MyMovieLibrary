@@ -3,50 +3,33 @@ import { Link } from "react-router-dom";
 import "./../styles/PeopleList.css"
 
 export default function WriterList(){
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoaded2, setIsLoaded2] = useState(false);
-  const [peoples, setPeoples] = useState([]);
-  const [movies, setMovies] = useState([]);
+  const [writers, setWriters] = useState([]);
 
   // Fetching data
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_API}/movies`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/writers`)
     .then(res => res.json())
     .then(
       (result) => {
-        setMovies(result);
+        setWriters(result);
         setIsLoaded(true);
       },
       (error) => {
         setIsLoaded(true);
         setError(error);
-      }
-    )
-
-    fetch(`${process.env.REACT_APP_SERVER_API}/peoples`)
-    .then(res2 => res2.json())
-    .then(
-      (result2) => {
-        setPeoples(result2);
-        setIsLoaded2(true);
-      },
-      (error) => {
-        setError(error);
-        setIsLoaded2(true);
       }
     )
   }, []);
-
-  let writerListDB = [];
-  let writersList = [];
   
   return (
     <div className="actors__list">
       <h2>Liste des scénaristes</h2>
       <div className="peoples">
       { 
-        (!isLoaded || !isLoaded2) ? ( 
+        (!isLoaded) ? ( 
           <div className="list__load">
             <div className="people__card r1"/>
             <div className="people__card r2"/>
@@ -55,16 +38,7 @@ export default function WriterList(){
             <div className="people__card r5"/>
           </div>
         ) : (
-          movies.map(movie => (
-            movie.writers.map(writer=>(
-              peoples.map(people => (
-                (writer === people._id )? 
-                writerListDB.push(people) : null
-              ))  
-            ))
-          )),
-          writersList = Array.from(new Set(writerListDB)),
-          writersList.map(writer => (
+          writers.map(writer => (
             <div key={writer._id} className="people__card">
               <Link to={`/writerDetails?id=${writer._id}`}>
               <img className="people__picture" src={writer.picture} alt={writer.firstname + " " + writer.lastname} />

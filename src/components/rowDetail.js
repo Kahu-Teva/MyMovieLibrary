@@ -23,7 +23,7 @@ function RowDetail({movie}){
             </div>
             <Link to={`/movieDetails?id=${movie._id}`} className="link_more_info">
                 <div className="link_more_info_ico"/>
-                <span>Plus d'infos</span>
+                <span>Read more.</span>
             </Link>
             <YouTube videoId={id} opts={opts} className="yt__window"/>
         </div>

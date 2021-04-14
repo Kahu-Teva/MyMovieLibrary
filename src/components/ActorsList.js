@@ -3,6 +3,7 @@ import "./../styles/PeopleList.css"
 import { Link } from "react-router-dom";
 
 function ActorsList() {
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [actors, setActors] = useState([]);
@@ -21,15 +22,12 @@ function ActorsList() {
       }
     )
   }, []);
-
-  let actorsListDB = [];
-  let actorsList = [];
   
   return (
     <div className="actors__list">
       <h2>Liste des acteurs</h2>
       <div className="peoples">
-        { (!isLoaded ) ? ( 
+        { (!isLoaded) ? ( 
           <div className="list__load">
             <div className="people__card r1"/>
             <div className="people__card r2"/>
