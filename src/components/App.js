@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Form            from "./Form.js"
+import Formulaire      from "./Formulaire.js"
 import LogoBar         from "./LogoBar.js"
 import Banner          from "./Banner.js"
 import Navbar          from "./Navbar.js"
@@ -16,6 +16,7 @@ import DirectorDetails from "./DirectorDetails";
 import Footer          from "./Footer.js"
 import './../styles/App.css';
 import "./../styles/Authentification.css"
+import UpdateMovie from './UpdateMovie.js';
 
 export default function App() {
   let genreHaveDB = [];
@@ -95,14 +96,25 @@ export default function App() {
             <DirectorDetails/>
           </Route>
 
-          <Route path="/putOutMomently">
+{/*    Formulaire update movie       */}
+          <Route path="/updateMovie">
             <div className="signin">
               <LogoBar/>
-              <Form/>
+              <UpdateMovie/>
               <Footer/>
             </div>
           </Route>
 
+{/*    Formulaire users       */}
+          <Route path="/putOutMomently2">
+            <div className="signin">
+              <LogoBar/>
+              <Formulaire/>
+              <Footer/>
+            </div>
+          </Route>
+
+{/*         Main         */}
           <Route path="/">
             <div className="app">
               <Navbar/>

@@ -167,6 +167,9 @@ export default function MovieDetails() {
                             ))
                         }
                     </p> */}
+
+                    <Link to={`/updateMovie?id=${movie._id}`} className="boutton__update">Update movie</Link>
+                                     
                 </div>
             </div>
         );

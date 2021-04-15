@@ -1,22 +1,11 @@
 import { React , useState } from 'react'
 import "./../styles/Authentification.css"
 
-export default function PostForm(){
-
+export default function Formulaire(){
 	const [nameUser, setName] = useState('');
     const [mdpUser, setMdp] = useState('');
 
-	/* let nameUser = "";
-	let mdpUser = "";
-
-	function setName(nameSet){
-		nameUser = nameSet;
-	};
-	function setMdp(mdpSet){
-		mdpUser = mdpSet;
-	}; */
-
-	function postm(){
+	function postForm(){
 		const requestOptions = {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
@@ -31,20 +20,22 @@ export default function PostForm(){
 				console.log("res DB: ", result);
 			});
 	}
+
 	return (
 		<div className="signin">
-			<form onSubmit={postm()}>
+			<form onSubmit={postForm}>
+				
 				<h2>Name</h2>
 				<input
 					type="text"
 					onChange={e => setName(e.target.value)}
-				/>
+					/>
 				<h2>Mot de passe</h2>
 				<input
 					type="text"
 					onChange={e => setMdp(e.target.value)}
-				/>
-				<button type="submit" className="submit__button">Submit</button>
+					/>
+				<button type="submit">Sign Up</button>
 			</form>
 		</div>
 	)
