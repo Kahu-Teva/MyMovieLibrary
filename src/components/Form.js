@@ -1,32 +1,51 @@
-import {useState} from "react";
-import {users} from './../datas/users';
+import { React , useState } from 'react'
 import "./../styles/Authentification.css"
 
-export default function Form({setVerifUser}) {
+export default function PostForm(){
 
-    const [activeLogin, setActiveLogin] = useState("")
-    const [activePassword, setActivePassword] = useState("")
+	const [nameUser, setName] = useState('');
+    const [mdpUser, setMdp] = useState('');
 
-    function VerifUser(){
-        users.map(user =>
-            {if(user.login === activeLogin && user.password === activePassword){  
-              return setVerifUser(true);
-            }else{
-              return null;
-            }
-        });
-    }
+	/* let nameUser = "";
+	let mdpUser = "";
 
-    return (
-        <div className="authentification__page">
-            <p className="authentification__title">Sign In</p>
-            <form onSubmit={VerifUser} className="authentification__login__form">
-                <label className="authentification__lab">Username</label>
-                <input type="text" className="authentification__champs" onChange={e => setActiveLogin(e.target.value)}/>
-                <label className="authentification__lab">Password</label>
-                <input className="authentification__champs" type="password" onChange={e => setActivePassword(e.target.value)}/>
-                <button className="authentification__submit" type="submit">Login</button>
-            </form>
-        </div>
-    )
+	function setName(nameSet){
+		nameUser = nameSet;
+	};
+	function setMdp(mdpSet){
+		mdpUser = mdpSet;
+	}; */
+
+	function postm(){
+		const requestOptions = {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+			body: new URLSearchParams({
+				'name' : nameUser,
+				'mdp' : mdpUser
+			})
+		}
+		fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/insert`, requestOptions)
+			.then(res => res.json())
+			.then(result => {
+				console.log("res DB: ", result);
+			});
+	}
+	return (
+		<div className="signin">
+			<form onSubmit={postm()}>
+				<h2>Name</h2>
+				<input
+					type="text"
+					onChange={e => setName(e.target.value)}
+				/>
+				<h2>Mot de passe</h2>
+				<input
+					type="text"
+					onChange={e => setMdp(e.target.value)}
+				/>
+				<button type="submit" className="submit__button">Submit</button>
+			</form>
+		</div>
+	)
 }

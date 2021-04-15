@@ -1,44 +1,14 @@
 .signin{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-items: center;
+    display: block;
+    width:600px;
+    margin:100 auto 0 auto;
+    padding: 15px;
 }
 
-p,form,input,button,label{
-    display: flex;
-    margin:0;
-    padding: 0;
+input{
+    display: block;
 }
 
-
-.logobar{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 90px;
-    width: 100%;
-    border: 0;
-    background-image: linear-gradient(0deg,transparent,rgb(17, 17, 17));
+.submit__button{
+    margin-top: 20px;
 }
-
-.authentification__page{
-    display: flex;
-    flex-direction:column;
-    align-content: center;
-    justify-items: center;
-    width: 350px;
-    height: 560px;
-    min-height: 560px;
-    padding: 60px 68px 40px;
-    /* margin: 90px auto; */
-    background-color: rgba(255, 255, 255, 0.356);
-}
-
-.authentification__title,.authentification__login__form,
-.authentification__lab,.authentification__champs,
-.authentification__submit{
-    display: flex;
-    width: 80%;
-}
-
