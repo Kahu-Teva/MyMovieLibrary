@@ -1,55 +1,51 @@
 import { React, useState, useEffect, useRef } from 'react';
 import { useLocation, Redirect} from "react-router-dom";
-// import "./../styles/Authentification.css"
 import "./../styles/MovieDetails.css"
+import moment from 'moment'
 
-export default function UpdateMovie() {
+export default function UpdatePeople() {
 
     let query = new URLSearchParams(useLocation().search);
     const [error, setError] = useState(null);
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
     const [isLoaded1, setIsLoaded1] = useState(false);
-    const [movie, setMovie] = useState([]);
-    // const [isLoaded2, setIsLoaded2] = useState(false);
-    // const [peoples, setPeoples] = useState([]);
+    const [people, setPeople] = useState([]);
 
 
     
-    let title = useRef(null);
-    let synopsis = useRef(null);
-    let releaseDate = useRef(null);
-    let duration = useRef(null);
-    let posterLink = useRef(null);
-    let trailerLink = useRef(null);
+    let lastname = useRef(null);
+    let firstname = useRef(null);
+    let biography = useRef(null);
+    let birthDate = useRef(null);
+    let deathDate = useRef(null);
+    let picture = useRef(null);
 
     function postForm(){
         let isOK = true; 
         if(isOK){ 
-            console.log("writers: ",movie.writers);
-            console.log("actors: ",movie.actors);
-            console.log("writers: ",movie.directors);
+            console.log("lastname: ",people.lastname);
+            console.log("firstname: ",people.firstname);
+            console.log("biography: ",people.biography);
+            console.log("birthDate: ",people.birthDate);
+            console.log("deathDate: ",people.deathDate);
+            console.log("picture: ",people.picture);
 
             const requestOptions = {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 body: new URLSearchParams({
-                    "id":movie._id,
-                    "title":title.value,
-                    "synopsis":synopsis.value,
-                    "genre":movie.genre,
-                    "duration":duration.value,
-                    "posterLink":posterLink.value,
-                    "trailerLink":trailerLink.value,
-                    "releaseDate":releaseDate.value,
-                    "directors":movie.directors,
-                    "writers":movie.writers,
-                    "actors":movie.actors,
-                    "rate":movie.rate
+                    "id":people._id,
+                    "lastname":lastname.value,
+                    "firstname":firstname.value,
+                    "biography":biography.value,
+                    "birthDate":birthDate.value,
+                    "deathDate":deathDate.value,
+                    "picture":picture.value,
                 })
             }
 
-            fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/updateMovie`, requestOptions)
+            fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/updatePeople`, requestOptions)
             .then(res => res.json())
             .then(result => {
                 if(!result.error){
@@ -63,14 +59,14 @@ export default function UpdateMovie() {
     }
 
     useEffect(() => {
-        let movieId = query.get("id");
-        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movieDetails?id=${movieId}`)
+        let peopleId = query.get("id");
+        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/peopleDetails?id=${peopleId}`)
         .then(res => res.json())
         .then(
             (result) => {
                 if(!result.error){
                     console.log(result);
-                    setMovie(result);
+                    setPeople(result);
                     setIsLoaded1(true);
                 }
                 else{
@@ -87,13 +83,13 @@ export default function UpdateMovie() {
     if(request || cancel){
         return(
             <div>
-                <Redirect to={`/movieDetails?id=${movie._id}`}/>;
+                <Redirect to={`/peopleDetails?id=${people._id}`}/>;
             </div>
         )
     }
     else if(error) {
         switch(error.error){
-            case "DATABASE_ERROR_UPDATE_MOVIE":{
+            case "DATABASE_ERROR_UPDATE_PEOPLE":{
                 return (<div className="error__page">
                     <div className="error__page__title">We apologize for this interruption</div>
                     <div className="error__page__info">
@@ -115,62 +111,51 @@ export default function UpdateMovie() {
             <div className="moviedetails">
                 <form>
                     <div className="moviedetails__infos">
-                        <h2>Title</h2>
+                        <h2>Firstname</h2>
                         <input
-                            id="movieTitle"
+                            id="firstname"
                             type="text"
-                            ref={val => title = val}
-                            defaultValue={movie.title}
+                            ref={val => firstname = val}
+                            defaultValue={people.firstname}
+                            className="updatemovie__synopsis"
+                        />
+                        <h2>Lastname</h2>
+                        <input
+                            id="lastname"
+                            type="text"
+                            ref={val => lastname = val}
+                            defaultValue={people.lastname}
                             className="updatemovie__synopsis"
                         />
 
                         <div className="moviedetails__synopsis">
-                            <h2>Synopsis</h2>
+                            <h2>biography</h2>
                             <textarea 
                                 type="text"
                                 cols="50"
                                 wrap="hard"
-                                ref={val => synopsis = val}
-                                defaultValue={movie.synopsis}
+                                ref={val => biography = val}
+                                defaultValue={people.biography}
                                 >
                                 
                             </textarea>
                         </div>
                         
-                        <h2>RealeaseDate</h2>
+                        <h2>BirthDate</h2>
+                        
                         <input
-                            type="number"
-                            ref={val => releaseDate = val}
-                            defaultValue={movie.releaseDate}
+                            type="date"
+                            ref={val => birthDate = val}
+                            defaultValue={moment(people.birthDate,"YYYY-MM-DD").format('DDMMYYYY')}
                         />                  
                         
-                        <div className="moviedetails__duration__genre">
-                            <h2>Duration</h2>
-                            <input
-                                type="number"
-                                ref={val => duration = val}
-                                defaultValue={movie.duration}
-                            />
-                        </div>
 
                         <h2>Poster link</h2>
                         <input
                             type="url"
-                            ref={val => posterLink = val}
-                            defaultValue={movie.posterLink}
+                            ref={val => picture = val}
+                            defaultValue={people.picture}
                         />
-
-                        <h2>Trailer link</h2>
-                        <input
-                            type="url"
-                            ref={val => trailerLink = val}
-                            defaultValue={movie.trailerLink}
-                        />
-
-                        <h2>Choose genre(s):</h2>
-                        {movie.genre.map(genre =>
-                            <div key={genre}>{genre}</div>    
-                        )}
                     </div>
                 </form>
 				<button onClick={postForm} className="boutton__update">Update</button>

@@ -27,6 +27,9 @@ function Navbar(){
             <Link to="/actors"  className="nav__button">Actors</Link>
             <Link to="/writers" className="nav__button">Writers</Link>
             <Link to="/directors" className="nav__button">Directors</Link>
+            <Link to="/peoples" className="nav__button">Peoples</Link>
+            
+            
             {/* <img src={logo_avatar} alt="My Avatar">
                 <Link to="/profil" className="nav__avatar"/>
             </img> */}

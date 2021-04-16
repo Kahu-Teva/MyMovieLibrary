@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Formulaire      from "./Formulaire.js"
 import LogoBar         from "./LogoBar.js"
 import Banner          from "./Banner.js"
@@ -16,7 +16,14 @@ import DirectorDetails from "./DirectorDetails";
 import Footer          from "./Footer.js"
 import './../styles/App.css';
 import "./../styles/Authentification.css"
+
+import InsertMovie from './InsertMovie.js';
 import UpdateMovie from './UpdateMovie.js';
+
+import PeopleList from './PeopleList.js';
+import PeopleDetails from './PeopleDetails.js';
+import UpdatePeople from './UpdatePeople.js';
+import InsertPeople from './InsertPeople.js';
 
 export default function App() {
   let genreHaveDB = [];
@@ -54,12 +61,6 @@ export default function App() {
     return (
       <Router>
         <Switch>
-          <Route path="/movieDetails">
-              <Navbar/>
-              <Space/>
-              <MovieDetails/>
-          </Route>
-
           <Route path="/actors">
             <Navbar/>
             <Space/>
@@ -96,19 +97,71 @@ export default function App() {
             <DirectorDetails/>
           </Route>
 
-{/*    Formulaire update movie       */}
+          <Route path="/peoples">
+              <Navbar/>
+              <Space/>
+              <PeopleList/>
+              <Footer/>
+          </Route>
+
+          <Route path="/peopleDetails">
+            <div className="signin">
+              <Navbar/>
+              <Space/>
+              <PeopleDetails/>
+              <Footer/>
+            </div>
+          </Route>
+
+          <Route path="/movieDetails">
+              <Navbar/>
+              <Space/>
+              <MovieDetails/>
+          </Route>
+
+{/*    Formulaire movie       */}
+          <Route path="/insertMovie">
+            <div className="signin">
+              <Navbar/>
+              <Space/>
+              <InsertMovie/>
+              <Footer/>
+            </div>
+          </Route>
+
           <Route path="/updateMovie">
             <div className="signin">
-              <LogoBar/>
+              <Navbar/>
+              <Space/>
               <UpdateMovie/>
               <Footer/>
             </div>
           </Route>
 
+{/*    Formulaire  people       */}
+          <Route path="/insertPeople">
+            <div className="signin">
+              <Navbar/>
+              <Space/>
+              <InsertPeople/>
+              <Footer/>
+            </div>
+          </Route>
+
+          <Route path="/updatePeople">
+            <div className="signin">
+              <Navbar/>
+              <Space/>
+              <UpdatePeople/>
+              <Footer/>
+            </div>
+          </Route>
+
+
 {/*    Formulaire users       */}
           <Route path="/putOutMomently2">
             <div className="signin">
-              <LogoBar/>
+              <Navbar/>
               <Formulaire/>
               <Footer/>
             </div>
@@ -125,6 +178,10 @@ export default function App() {
                   <Row key={"category"+index} title={genre} category={genre}/>
                 ))
               }
+              <Link to="/insertMovie" className="banner__button button_more_info">
+                <div className="banner__button_ico"/>
+                <span>New Movie</span>
+              </Link>
               <Footer/>
             </div>
           </Route>

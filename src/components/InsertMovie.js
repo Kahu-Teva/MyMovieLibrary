@@ -1,18 +1,13 @@
-import { React, useState, useEffect, useRef } from 'react';
-import { useLocation, Redirect} from "react-router-dom";
+import { React, useState, useRef } from 'react';
+import { Redirect} from "react-router-dom";
 // import "./../styles/Authentification.css"
 import "./../styles/MovieDetails.css"
 
-export default function UpdateMovie() {
+export default function InsertMovie() {
 
-    let query = new URLSearchParams(useLocation().search);
     const [error, setError] = useState(null);
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
-    const [isLoaded1, setIsLoaded1] = useState(false);
-    const [movie, setMovie] = useState([]);
-    // const [isLoaded2, setIsLoaded2] = useState(false);
-    // const [peoples, setPeoples] = useState([]);
 
 
     
@@ -25,27 +20,23 @@ export default function UpdateMovie() {
 
     function postForm(){
         let isOK = true; 
-        if(isOK){ 
-            console.log("writers: ",movie.writers);
-            console.log("actors: ",movie.actors);
-            console.log("writers: ",movie.directors);
+        if(isOK){
 
             const requestOptions = {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 body: new URLSearchParams({
-                    "id":movie._id,
                     "title":title.value,
                     "synopsis":synopsis.value,
-                    "genre":movie.genre,
+                    "genre":"[]",
                     "duration":duration.value,
                     "posterLink":posterLink.value,
                     "trailerLink":trailerLink.value,
                     "releaseDate":releaseDate.value,
-                    "directors":movie.directors,
-                    "writers":movie.writers,
-                    "actors":movie.actors,
-                    "rate":movie.rate
+                    "directors":"[]",
+                    "writers":"[]",
+                    "actors":"[]",
+                    "rate":"[]"
                 })
             }
 
@@ -62,32 +53,10 @@ export default function UpdateMovie() {
         }
     }
 
-    useEffect(() => {
-        let movieId = query.get("id");
-        fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/movieDetails?id=${movieId}`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                if(!result.error){
-                    console.log(result);
-                    setMovie(result);
-                    setIsLoaded1(true);
-                }
-                else{
-                    setError(result);
-                }
-            },
-            (error) => {
-                setIsLoaded1(true);
-                setError(error);
-            }
-        )
-    }, []);
-
     if(request || cancel){
         return(
             <div>
-                <Redirect to={`/movieDetails?id=${movie._id}`}/>;
+                <Redirect to="/"/>;
             </div>
         )
     }
@@ -108,9 +77,7 @@ export default function UpdateMovie() {
                 </div>);
         }
         
-    }else if (!isLoaded1) {
-        return <div className="movie__load"/>;
-    }else {
+    }else{
         return (
             <div className="moviedetails">
                 <form>
@@ -120,7 +87,6 @@ export default function UpdateMovie() {
                             id="movieTitle"
                             type="text"
                             ref={val => title = val}
-                            defaultValue={movie.title}
                             className="updatemovie__synopsis"
                         />
 
@@ -131,7 +97,6 @@ export default function UpdateMovie() {
                                 cols="50"
                                 wrap="hard"
                                 ref={val => synopsis = val}
-                                defaultValue={movie.synopsis}
                                 >
                                 
                             </textarea>
@@ -141,7 +106,6 @@ export default function UpdateMovie() {
                         <input
                             type="number"
                             ref={val => releaseDate = val}
-                            defaultValue={movie.releaseDate}
                         />                  
                         
                         <div className="moviedetails__duration__genre">
@@ -149,7 +113,6 @@ export default function UpdateMovie() {
                             <input
                                 type="number"
                                 ref={val => duration = val}
-                                defaultValue={movie.duration}
                             />
                         </div>
 
@@ -157,23 +120,21 @@ export default function UpdateMovie() {
                         <input
                             type="url"
                             ref={val => posterLink = val}
-                            defaultValue={movie.posterLink}
                         />
 
                         <h2>Trailer link</h2>
                         <input
                             type="url"
                             ref={val => trailerLink = val}
-                            defaultValue={movie.trailerLink}
                         />
 
                         <h2>Choose genre(s):</h2>
-                        {movie.genre.map(genre =>
+                        {/* {movie.genre.map(genre =>
                             <div key={genre}>{genre}</div>    
-                        )}
+                        )} */}
                     </div>
                 </form>
-				<button onClick={postForm} className="boutton__update">Update</button>
+				<button onClick={postForm} className="boutton__update">Add</button>
 				<button onClick={setCancel} className="boutton__update">Cancel</button>
             </div>
         );
