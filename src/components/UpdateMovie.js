@@ -1,6 +1,5 @@
 import { React, useState, useEffect, useRef } from 'react';
 import { useLocation, Redirect} from "react-router-dom";
-// import "./../styles/Authentification.css"
 import "./../styles/MovieDetails.css"
 
 export default function UpdateMovie() {
@@ -11,9 +10,6 @@ export default function UpdateMovie() {
     const [cancel, setCancel] = useState(false);
     const [isLoaded1, setIsLoaded1] = useState(false);
     const [movie, setMovie] = useState([]);
-    // const [isLoaded2, setIsLoaded2] = useState(false);
-    // const [peoples, setPeoples] = useState([]);
-
 
     
     let title = useRef(null);
@@ -24,15 +20,12 @@ export default function UpdateMovie() {
     let trailerLink = useRef(null);
 
     function postForm(){
+        console.log("genre: ", movie.genre);
         let isOK = true; 
-        if(isOK){ 
-            console.log("writers: ",movie.writers);
-            console.log("actors: ",movie.actors);
-            console.log("writers: ",movie.directors);
-
+        if(isOK){
             const requestOptions = {
                 method: 'POST',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+                headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
                 body: new URLSearchParams({
                     "id":movie._id,
                     "title":title.value,

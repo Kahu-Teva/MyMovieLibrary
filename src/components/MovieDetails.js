@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { useLocation, Link} from "react-router-dom";
+import { useLocation, Link , Redirect } from "react-router-dom";
 import "./../styles/MovieDetails.css"
 
 
@@ -8,9 +8,35 @@ export default function MovieDetails() {
   // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded1, setIsLoaded1] = useState(false);
+    const [request, setRequest] = useState(false);
     const [isLoaded2, setIsLoaded2] = useState(false);
     const [movie, setMovie] = useState([]);
     const [peoples, setPeoples] = useState([]);
+
+    function deleteMovie(){
+        if(window.confirm("Do you really want to delete this movie ?")){
+            let movieId = query.get("id");
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+                body: new URLSearchParams({
+                    "id":movieId
+                })
+            }
+
+            fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/deleteMovie`, requestOptions)
+            .then(res => res.json())
+            .then(result => {
+                if(!result.error){
+                    setRequest(result);
+                }
+                else{
+                    setError(result);
+                }
+            });
+        }
+    }
+
 
     useEffect(() => {
         let movieId = query.get("id");
@@ -46,7 +72,14 @@ export default function MovieDetails() {
     /* let directors = [];
     let writers = [];
     let actors = []; */
-    if(error) {
+    if(request){
+        return(
+            <div>
+                <Redirect to="/"/>;
+            </div>
+        )
+    }
+    else if(error) {
         switch(error.error){
             case "ERROR_MOVIE_NOT_FOUND":{
                 return (<div className="error__page">
@@ -169,6 +202,8 @@ export default function MovieDetails() {
                     </p> */}
 
                     <Link to={`/updateMovie?id=${movie._id}`} className="boutton__update">Update movie</Link>
+				    <div onClick={deleteMovie} className="boutton__update">DELETE</div>
+
                                      
                 </div>
             </div>

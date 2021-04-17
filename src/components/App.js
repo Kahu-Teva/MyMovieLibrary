@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Formulaire      from "./Formulaire.js"
-import LogoBar         from "./LogoBar.js"
 import Banner          from "./Banner.js"
 import Navbar          from "./Navbar.js"
 import Space           from "./Space.js"
@@ -52,12 +51,14 @@ export default function App() {
   if(!isLoaded){
     return(<div className="app__is__load"/>);
   }
-  else{
+  else{    
     movies.map(movie =>(
       movie.genre.map(currentGenre => (
         genreHaveDB.push(currentGenre))
     )));
+    
     genreNoDB = Array.from(new Set(genreHaveDB));
+    console.log("genreNoDB: ", genreNoDB);
     return (
       <Router>
         <Switch>

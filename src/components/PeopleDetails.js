@@ -1,10 +1,9 @@
-import { React, useState , useEffect } from 'react';
+import { React, useState , useEffect, useMemo } from 'react';
 import { useLocation , Link , Redirect } from "react-router-dom";
 import moment from 'moment'
 import './../styles/PeopleDetails.css';
 
 export default function PeopleDetails() {
-    let query = new URLSearchParams(useLocation().search);
     // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -35,6 +34,9 @@ export default function PeopleDetails() {
         }
     }
 
+
+    const test = useLocation().search;
+    let query = useMemo(() => new URLSearchParams(test), [test])
     // Fetching data
     useEffect(() => {
         let peopleId = query.get("id");
@@ -44,15 +46,12 @@ export default function PeopleDetails() {
             setPeople(result);
             setIsLoaded(true);
         },
-        // Remarque : il faut gérer les erreurs ici plutôt que dans
-        // un bloc catch() afin que nous n’avalions pas les exceptions
-        // dues à de véritables bugs dans les composants.
         (error) => {
             setError(error);
             setIsLoaded(true);
         }
         )
-    }, [])
+    }, [query])
     
     if(request){
         return(
@@ -100,7 +99,7 @@ export default function PeopleDetails() {
                     <div className="banner__button_ico"/>
                     <span>Edit infos</span>
                 </Link>
-				<button onClick={deletePeople} className="boutton__update">DELETE</button>
+				<div onClick={deletePeople} className="boutton__update">DELETE</div>
             </div>
         );
     }

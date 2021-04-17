@@ -24,13 +24,6 @@ export default function UpdatePeople() {
     function postForm(){
         let isOK = true; 
         if(isOK){ 
-            console.log("lastname: ",people.lastname);
-            console.log("firstname: ",people.firstname);
-            console.log("biography: ",people.biography);
-            console.log("birthDate: ",people.birthDate);
-            console.log("deathDate: ",people.deathDate);
-            console.log("picture: ",people.picture);
-
             const requestOptions = {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
@@ -39,8 +32,8 @@ export default function UpdatePeople() {
                     "lastname":lastname.value,
                     "firstname":firstname.value,
                     "biography":biography.value,
-                    "birthDate":birthDate.value,
-                    "deathDate":deathDate.value,
+                    "birthDate":moment(birthDate.value,"YYYY-MM-DD").format('YYYYMMDD'),
+                    "deathDate":people.deathDate,
                     "picture":picture.value,
                 })
             }
@@ -146,7 +139,7 @@ export default function UpdatePeople() {
                         <input
                             type="date"
                             ref={val => birthDate = val}
-                            defaultValue={moment(people.birthDate,"YYYY-MM-DD").format('DDMMYYYY')}
+                            defaultValue={moment(people.birthDate,"YYYYMMDD").format('YYYY-MM-DD')}
                         />                  
                         
 

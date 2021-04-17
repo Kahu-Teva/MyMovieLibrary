@@ -40,7 +40,7 @@ export default function InsertMovie() {
                 })
             }
 
-            fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/updateMovie`, requestOptions)
+            fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/insertMovie`, requestOptions)
             .then(res => res.json())
             .then(result => {
                 if(!result.error){
