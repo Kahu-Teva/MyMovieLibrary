@@ -1,19 +1,20 @@
-import { React, useState, useEffect } from 'react';
-import "./../styles/PeopleList.css"
+import {React, useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import "./PeopleList.css"
 
-function ActorsList() {
+export default function WriterList(){
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [actors, setActors] = useState([]);
+  const [writers, setWriters] = useState([]);
 
+  // Fetching data
   useEffect(() => {
-    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/actors`)
+    fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/writers`)
     .then(res => res.json())
     .then(
       (result) => {
-        setActors(result);
+        setWriters(result);
         setIsLoaded(true);
       },
       (error) => {
@@ -25,9 +26,10 @@ function ActorsList() {
   
   return (
     <div className="actors__list">
-      <h2>Liste des acteurs</h2>
+      <h2>Liste des scénaristes</h2>
       <div className="peoples">
-        { (!isLoaded) ? ( 
+      { 
+        (!isLoaded) ? ( 
           <div className="list__load">
             <div className="people__card r1"/>
             <div className="people__card r2"/>
@@ -35,12 +37,12 @@ function ActorsList() {
             <div className="people__card r4"/>
             <div className="people__card r5"/>
           </div>
-         ) : (
-          actors.map(actor => (
-            <div key={actor._id} className="people__card">
-              <Link key={actor._id} to={`/actorDetails?id=${actor._id}`}>
-                <img className="people__picture" src={actor.picture} alt={actor.picture}/>
-                <span className="people__name">{actor.firstname} {actor.lastname}</span>
+        ) : (
+          writers.map(writer => (
+            <div key={writer._id} className="people__card">
+              <Link to={`/writerDetails?id=${writer._id}`}>
+              <img className="people__picture" src={writer.picture} alt={writer.firstname + " " + writer.lastname} />
+              <span className="people__name">{writer.firstname} {writer.lastname}</span>
               </Link>
             </div>
           ))
@@ -49,5 +51,3 @@ function ActorsList() {
     </div>
   );
 }
-
-export default ActorsList;

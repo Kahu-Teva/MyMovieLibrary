@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import moment from 'moment'
-import './../styles/PeopleDetails.css';
+import './PeopleDetails.css';
 
 function DirectorDetails() {
   let query = new URLSearchParams(useLocation().search);

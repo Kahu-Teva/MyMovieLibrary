@@ -1,5 +1,6 @@
 import { React, useState, useRef } from 'react';
 import { Redirect} from "react-router-dom";
+import DisplayError from './error/DisplayError.js';
 import "./../styles/MovieDetails.css"
 
 export default function InsertPeople() {
@@ -8,12 +9,10 @@ export default function InsertPeople() {
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
 
-    
     let lastname = useRef(null);
     let firstname = useRef(null);
     let biography = useRef(null);
     let birthDate = useRef(null);
-    let deathDate = useRef(null);
     let picture = useRef(null);
 
     function postForm(){
@@ -54,22 +53,10 @@ export default function InsertPeople() {
         )
     }
     else if(error) {
-        switch(error.error){
-            case "DATABASE_ERROR_UPDATE_PEOPLE":{
-                return (<div className="error__page">
-                    <div className="error__page__title">We apologize for this interruption</div>
-                    <div className="error__page__info">
-                        <div className="error__page__info__text">Sorry we could not reach the MyMovieLibrary service. Please try again later.</div>
-                        <div className="error__page__info__error__code">Error code: {error.error}</div>
-                    </div>
-                </div>);
-            }
-            default:
-                return (<div>
-                    Error : {error.error}
-                </div>);
-        }
-        
+        return(
+        <div className="Error">
+            <DisplayError errorCode={error.error}/>
+        </div>)     
     }else {
         return (
             <div className="moviedetails">

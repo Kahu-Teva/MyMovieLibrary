@@ -86,33 +86,3 @@ p{
     0% {width: 0px;}
     100% {width: 250px;}
 }
-
-.error__page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    margin-top: 100px;
-}
-
-.error__page__title{
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom:20px;
-}
-
-.error__page__info{
-    margin: 0 auto;
-    width:50%;
-}
-
-.error__page__info__text{
-    font-size: 17px;
-}
-
-.error__page__info__error__code{
-    font-size: 10px;
-    margin-top: 10vh;
-}

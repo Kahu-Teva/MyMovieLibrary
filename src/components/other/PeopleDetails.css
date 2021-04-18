@@ -1,0 +1,58 @@
+.peopledetails{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 600px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.peopledetails__poster{
+    width: 420px;
+    padding-left: 20px;
+    height: auto;
+}
+
+
+.peopledetails__infos{
+    width: 500px;
+    padding-left: 20px;
+}
+
+.peopledetails__biography{
+    text-align: justify;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+    transition: all 0.5s;
+}
+
+a:hover{
+    color: rgb(155, 155, 155);
+}
+
+h3{
+    display: inline-flex;
+}
+
+p{
+    padding: 5px;
+}
+
+/* #####################LOADING######################## */
+
+.people__load{
+    margin: auto;
+    width: 50px;
+    height: 80vh;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-image: url("./../assets/loader.gif");
+}
+
+@keyframes anim{
+    0% {width: 0px;}
+    100% {width: 250px;}
+}

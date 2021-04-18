@@ -1,11 +1,12 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect, useRef , useMemo } from 'react';
 import { useLocation, Redirect} from "react-router-dom";
 import "./../styles/MovieDetails.css"
 import moment from 'moment'
 
 export default function UpdatePeople() {
 
-    let query = new URLSearchParams(useLocation().search);
+    const location = useLocation().search;
+    let query = useMemo(() => new URLSearchParams(location), [location]) 
     const [error, setError] = useState(null);
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
@@ -18,7 +19,6 @@ export default function UpdatePeople() {
     let firstname = useRef(null);
     let biography = useRef(null);
     let birthDate = useRef(null);
-    let deathDate = useRef(null);
     let picture = useRef(null);
 
     function postForm(){
@@ -58,7 +58,6 @@ export default function UpdatePeople() {
         .then(
             (result) => {
                 if(!result.error){
-                    console.log(result);
                     setPeople(result);
                     setIsLoaded1(true);
                 }
@@ -71,7 +70,7 @@ export default function UpdatePeople() {
                 setError(error);
             }
         )
-    }, []);
+    }, [query]);
 
     if(request || cancel){
         return(
@@ -150,9 +149,9 @@ export default function UpdatePeople() {
                             defaultValue={people.picture}
                         />
                     </div>
+				<button type="submit" onClick={postForm} className="boutton__update">Update</button>
+				<button type="submit" onClick={setCancel} className="boutton__update">Cancel</button>
                 </form>
-				<button onClick={postForm} className="boutton__update">Update</button>
-				<button onClick={setCancel} className="boutton__update">Cancel</button>
             </div>
         );
     }

@@ -24,9 +24,9 @@ function Navbar(){
                 <img src={logo_mml} alt="My Movie Library Logo" className="navbar__logo" />
             </Link>
             <Link to="/Home"    className="nav__button">Home</Link>
-            <Link to="/actors"  className="nav__button">Actors</Link>
+            {/* <Link to="/actors"  className="nav__button">Actors</Link>
             <Link to="/writers" className="nav__button">Writers</Link>
-            <Link to="/directors" className="nav__button">Directors</Link>
+            <Link to="/directors" className="nav__button">Directors</Link> */}
             <Link to="/peoples" className="nav__button">Peoples</Link>
             
             

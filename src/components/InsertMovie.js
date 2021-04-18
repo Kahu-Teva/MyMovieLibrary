@@ -1,10 +1,9 @@
 import { React, useState, useRef } from 'react';
 import { Redirect} from "react-router-dom";
-// import "./../styles/Authentification.css"
+import DisplayError from './error/DisplayError.js';
 import "./../styles/MovieDetails.css"
 
 export default function InsertMovie() {
-
     const [error, setError] = useState(null);
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
@@ -61,22 +60,11 @@ export default function InsertMovie() {
         )
     }
     else if(error) {
-        switch(error.error){
-            case "DATABASE_ERROR_UPDATE_MOVIE":{
-                return (<div className="error__page">
-                    <div className="error__page__title">We apologize for this interruption</div>
-                    <div className="error__page__info">
-                        <div className="error__page__info__text">Sorry we could not reach the MyMovieLibrary service. Please try again later.</div>
-                        <div className="error__page__info__error__code">Error code: {error.error}</div>
-                    </div>
-                </div>);
-            }
-            default:
-                return (<div>
-                    Error : {error.error}
-                </div>);
-        }
-        
+        return(
+            <div className="Error">
+                <DisplayError errorCode={error.error}/>
+            </div>
+        )     
     }else{
         return (
             <div className="moviedetails">

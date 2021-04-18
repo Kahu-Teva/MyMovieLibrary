@@ -1,17 +1,18 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect , useMemo } from 'react';
 import { useLocation, Link , Redirect } from "react-router-dom";
+import DisplayError from './error/DisplayError.js';
 import "./../styles/MovieDetails.css"
 
 
 export default function MovieDetails() {
-    let query = new URLSearchParams(useLocation().search);
-  // eslint-disable-next-line no-unused-vars
+    const location = useLocation().search;
+    let query = useMemo(() => new URLSearchParams(location), [location]) 
     const [error, setError] = useState(null);
     const [isLoaded1, setIsLoaded1] = useState(false);
     const [request, setRequest] = useState(false);
-    const [isLoaded2, setIsLoaded2] = useState(false);
     const [movie, setMovie] = useState([]);
-    const [peoples, setPeoples] = useState([]);
+    /* const [peoples, setPeoples] = useState([]);
+    const [isLoaded2, setIsLoaded2] = useState(false); */
 
     function deleteMovie(){
         if(window.confirm("Do you really want to delete this movie ?")){
@@ -68,34 +69,21 @@ export default function MovieDetails() {
                 setError(error);
             }
         ) */
-    }, []);
+    }, [query]);
     /* let directors = [];
     let writers = [];
     let actors = []; */
     if(request){
         return(
-            <div>
-                <Redirect to="/"/>;
-            </div>
-        )
+        <div>
+            <Redirect to="/"/>;
+        </div>)
     }
     else if(error) {
-        switch(error.error){
-            case "ERROR_MOVIE_NOT_FOUND":{
-                return (<div className="error__page">
-                    <div className="error__page__title">We apologize for this interruption</div>
-                    <div className="error__page__info">
-                        <div className="error__page__info__text">This title is currently not available in your country. A wide choice of programs awaits you on the home page.</div>
-                        <div className="error__page__info__error__code">Error code: {error.error}</div>
-                    </div>
-                </div>);
-            }
-            default:
-                return (<div>
-                    Error : {error.error}
-                </div>);
-        }
-        
+        return(
+        <div className="Error">
+            <DisplayError errorCode={error.error}/>
+        </div>)     
     }else if (!isLoaded1 /* || !isLoaded2 */) {
         return <div className="movie__load"/>;
     }else {

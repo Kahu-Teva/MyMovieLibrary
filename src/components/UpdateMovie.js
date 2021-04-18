@@ -1,10 +1,13 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect, useRef , useMemo } from 'react';
 import { useLocation, Redirect} from "react-router-dom";
+import DisplayError from './error/DisplayError.js';
 import "./../styles/MovieDetails.css"
 
 export default function UpdateMovie() {
 
-    let query = new URLSearchParams(useLocation().search);
+    const location = useLocation().search;
+    let query = useMemo(() => new URLSearchParams(location), [location]); 
+    
     const [error, setError] = useState(null);
     const [request, setRequest] = useState(false);
     const [cancel, setCancel] = useState(false);
@@ -75,7 +78,7 @@ export default function UpdateMovie() {
                 setError(error);
             }
         )
-    }, []);
+    }, [query]);
 
     if(request || cancel){
         return(
@@ -85,22 +88,11 @@ export default function UpdateMovie() {
         )
     }
     else if(error) {
-        switch(error.error){
-            case "DATABASE_ERROR_UPDATE_MOVIE":{
-                return (<div className="error__page">
-                    <div className="error__page__title">We apologize for this interruption</div>
-                    <div className="error__page__info">
-                        <div className="error__page__info__text">Sorry we could not reach the MyMovieLibrary service. Please try again later.</div>
-                        <div className="error__page__info__error__code">Error code: {error.error}</div>
-                    </div>
-                </div>);
-            }
-            default:
-                return (<div>
-                    Error : {error.error}
-                </div>);
-        }
-        
+        return(
+            <div className="Error">
+                <DisplayError errorCode={error.error}/>
+            </div>
+        )     
     }else if (!isLoaded1) {
         return <div className="movie__load"/>;
     }else {

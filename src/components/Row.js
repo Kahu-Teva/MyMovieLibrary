@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import RowDetail from "./RowDetail.js";
+import DisplayError from './error/DisplayError.js';
 import "./../styles/Row.css"
 
 function Row({title,category}){
@@ -31,8 +32,12 @@ function Row({title,category}){
         setIsLoadedDetail(true);
     }
 
+    
     if(error) {
-        return <div>Erreur : {error.message}</div>;
+        return(
+        <div className="Error">
+            <DisplayError errorCode={error.error}/>
+        </div>)     
     }else if(!isLoaded) {
         return (
         <div className="row">

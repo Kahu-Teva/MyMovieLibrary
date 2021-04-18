@@ -1,7 +1,7 @@
 import logo from "./../assets/logo.png"
 import "./../styles/Header.css"
 
-function Header(){
+export default function Header(){
     return (
         <div className="Header">
             <div className="nav-bar">
@@ -18,5 +18,3 @@ function Header(){
         </div>
     )
 }
-
-export default Header

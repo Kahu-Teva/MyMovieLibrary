@@ -6,12 +6,12 @@ import Navbar          from "./Navbar.js"
 import Space           from "./Space.js"
 import Row             from "./Row.js"
 import MovieDetails    from "./MovieDetails.js";
-import ActorsList      from "./ActorsList.js"
+/* import ActorsList      from "./ActorsList.js"
 import ActorDetails    from "./ActorDetails.js";
 import WritersList     from "./WritersList.js";
 import WriterDetails   from "./WriterDetails.js";
 import DirectorList    from './DirectorsList.js';
-import DirectorDetails from "./DirectorDetails";
+import DirectorDetails from "./DirectorDetails"; */
 import Footer          from "./Footer.js"
 import './../styles/App.css';
 import "./../styles/Authentification.css"
@@ -62,7 +62,7 @@ export default function App() {
     return (
       <Router>
         <Switch>
-          <Route path="/actors">
+{/*           <Route path="/actors">
             <Navbar/>
             <Space/>
             <ActorsList/>
@@ -96,7 +96,7 @@ export default function App() {
             <Navbar/>
             <Space/>
             <DirectorDetails/>
-          </Route>
+          </Route> */}
 
           <Route path="/peoples">
               <Navbar/>
@@ -160,7 +160,7 @@ export default function App() {
 
 
 {/*    Formulaire users       */}
-          <Route path="/putOutMomently2">
+          <Route path="/signin">
             <div className="signin">
               <Navbar/>
               <Formulaire/>
