@@ -15,7 +15,6 @@ function Row({title,category}){
         .then(res => res.json())
         .then(
             (result) => {
-            console.log("Result : ", result);
             setIsLoaded(true);
             setItems(result);
             },

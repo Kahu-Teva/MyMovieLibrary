@@ -23,7 +23,6 @@ export default function UpdateMovie() {
     let trailerLink = useRef(null);
 
     function postForm(){
-        console.log("genre: ", movie.genre);
         let isOK = true; 
         if(isOK){
             const requestOptions = {
@@ -65,7 +64,6 @@ export default function UpdateMovie() {
         .then(
             (result) => {
                 if(!result.error){
-                    console.log(result);
                     setMovie(result);
                     setIsLoaded1(true);
                 }

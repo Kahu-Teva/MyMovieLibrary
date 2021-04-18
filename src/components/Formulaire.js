@@ -17,7 +17,7 @@ export default function Formulaire(){
 		fetch(`HTTP://${process.env.REACT_APP_SERVER_ADRESS}:${process.env.REACT_APP_SERVER_PORT}/api/insert`, requestOptions)
 			.then(res => res.json())
 			.then(result => {
-				console.log("res DB: ", result);
+				console.log("resultat DB du post Formulaire: ", result);
 			});
 	}
 

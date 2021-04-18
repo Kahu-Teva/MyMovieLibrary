@@ -41,7 +41,6 @@ export default function App() {
         setIsLoaded(true);
       },
       (error) => {
-        console.log(error);
         setIsLoaded(true);
         setError(error);
       }
@@ -58,7 +57,6 @@ export default function App() {
     )));
     
     genreNoDB = Array.from(new Set(genreHaveDB));
-    console.log("genreNoDB: ", genreNoDB);
     return (
       <Router>
         <Switch>

@@ -20,7 +20,6 @@ function ActorDetails() {
         setIsLoaded(true);
       },
       (error) => {
-        console.log("error: ", error);
         setError(error);
         setIsLoaded(true);
       }
