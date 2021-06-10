@@ -1,3 +1,7 @@
+# MyMovieLibrary (frontend)
+
+MyMovieLibrary est un projet de plateforme de distribution de film visant à me familiariser avec la stack M.E.R.N dans le cadre d'un stage d'un mois et demi. Ce repository concerne la partie Frontend de l'application MyMovieLibrary (voir repository ServerMyMovieLibrary pour la partie backend).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
